@@ -1,351 +1,414 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Abhinav Account - Add Bank Account</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(120deg, #232526 0%, #414345 60%, #d1b97e 100%);
-      font-family: 'Roboto', Arial, sans-serif;
-      color: #fff;
-      position: relative;
-      overflow-x: hidden;
-    }
-    .lux-navbar {
-      background: rgba(32,32,32,0.98);
-      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.09);
-      display: flex;
-      align-items: center;
-      height: 72px;
-      padding: 0 55px;
-      justify-content: space-between;
-      position: fixed;
-      width: 100vw;
-      z-index: 10;
-      border-bottom: 1.5px solid #f5c34b;
-    }
-    .lux-navbar .branding {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-    .lux-navbar .branding img {
-      height: 40px;
-      width: auto;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
-    }
-    .lux-navbar .branding span {
-      font-family: 'Montserrat', sans-serif;
-      color: #fff;
-      font-size: 1.35em;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-shadow: 1px 1px 7px #1a1a1a;
-    }
-    .lux-navbar .branding .diamond {
-      background: linear-gradient(120deg, #f5c34b 60%, #fff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 1.4em;
-      font-weight: 900;
-      font-family: 'Montserrat', sans-serif;
-      margin-left: 10px;
-    }
-    .lux-navbar .right-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.22em;
-      font-weight: 600;
-      color: #f5c34b;
-      margin-left: 18px;
-      letter-spacing: 2.5px;
-      text-shadow: 1px 1px 5px #998043;
-    }
-    .lux-navbar .profile {
-      background: #444;
-      border-radius: 55%;
-      width: 39px;
-      height: 39px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.06em;
-      font-weight: 700;
-      color: #f5c34b;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.17);
-      border: 2.2px solid #f5c34b;
-      margin-left: 18px;
-    }
-    .diamond-bg {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-      pointer-events: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.09;
-    }
-    .lux-bg-title {
-      margin-top: 107px;
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2em;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: #f5e1a0;
-      text-shadow: 2px 2px 14px #000, 0 0 0 #fff;
-      border-bottom: 2px solid #f5c34b;
-      width: 390px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-bottom: 12px;
-      position: relative;
-      z-index: 1;
-      background: rgba(59, 53, 41, 0.11);
-      box-shadow: 0 2px 8px #d1b97e3b;
-    }
-    .lux-container {
-      max-width: 430px;
-      margin: 47px auto 0 auto;
-      background: rgba(255,255,255,0.09);
-      border-radius: 17px;
-      box-shadow: 0 4px 38px 0 rgba(162,131,69,0.16), 0px 2px 21px rgba(0,0,0,0.15);
-      padding: 43px 33px 39px 33px;
-      position: relative;
-      backdrop-filter: blur(7px);
-      border: 1.8px solid #f5c34b;
-      z-index: 1;
-    }
-    h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      margin-bottom: 24px;
-      color: #dfc977;
-      text-align: center;
-      font-size: 1.4em;
-      letter-spacing: 2px;
-      text-shadow: 1px 1px 13px #92822a;
-    }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      margin-bottom: 7px;
-      font-weight: 500;
-      color: #ead690;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.02em;
-      letter-spacing: 1px;
-    }
-    input[type='text'] {
-      width: 100%;
-      padding: 13px;
-      border: 1.5px solid #f5c34b;
-      border-radius: 6.5px;
-      font-size: 1em;
-      margin-top: 2px;
-      background: rgba(255,255,255,0.21);
-      color: #2a1603;
-      font-family: 'Roboto', Arial, sans-serif;
-      box-sizing: border-box;
-      transition: border .23s;
-    }
-    input[type='text']:focus {
-      border-color: #ead690;
-      outline: none;
-      background: #fffbe9;
-    }
-    .lux-btn {
-      background: linear-gradient(90deg, #ff0000 0%, #d1b97e 100%);
-      color: #fffaf3;
-      border: none;
-      border-radius: 8px;
-      padding: 14px 0;
-      width: 100%;
-      font-size: 1.12em;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 2px 19px rgba(244,193,75,0.21);
-      transition: background .18s;
-      margin-top: 18px;
-      letter-spacing: 1px;
-      border: 2px solid #fff0c0;
-    }
-    .lux-btn:hover {
-      background: linear-gradient(86deg, #d1b97e 12%, #ff0000 96%);
-      color: #f5c34b;
-      border-color: #f5c34b;
-      box-shadow: 0 6px 20px #a2834561;
-    }
-    /* Popup Styles */
-    .popup-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(52, 44, 24, 0.60);
-      z-index: 99;
-      align-items: center;
-      justify-content: center;
-    }
-    .popup-overlay.show {
-      display: flex;
-      animation: fadeIn 0.22s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0;}
-      to { opacity: 1;}
-    }
-    .popup-modal {
-      background: linear-gradient(120deg, #232526 0%, #f5c34b 95%);
-      border-radius: 20px;
-      padding: 38px 42px 35px 42px;
-      box-shadow: 0 8px 45px 0 rgba(162,131,69,0.19), 0px 2px 21px rgba(0,0,0,0.13);
-      text-align: center;
-      position: relative;
-      min-width: 360px;
-      max-width: 96vw;
-      border: 2.7px solid #fffaf3;
-    }
-    .popup-modal .yt-logo {
-      width: 82px;
-      height: auto;
-      margin-bottom: 18px;
-      filter: drop-shadow(0 0 13px #fffaf3);
-    }
-    .popup-modal h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2em;
-      font-weight: 800;
-      color: #ff0000;
-      margin-bottom: 15px;
-      margin-top: 0;
-      letter-spacing: 1.2px;
-      text-shadow: 0px 0px 17px #fff8c3;
-    }
-    .popup-modal p {
-      font-size: 1.22em;
-      color: #363636;
-      font-family: 'Montserrat', sans-serif;
-      margin: 9px 0 18px 0;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-shadow: 0 0 12px #ecd780;
-    }
-    .close-popup-btn {
-      background: linear-gradient(90deg, #ff0000 0%, #d1b97e 100%);
-      color: #fffaf3;
-      font-family: 'Montserrat', sans-serif;
-      border: none;
-      border-radius: 8px;
-      padding: 11px 29px;
-      font-size: 1.15em;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 2px 19px rgba(244,193,75,0.21);
-      transition: background .18s;
-      margin-top: 8px;
-      border: 2px solid #fff0c0;
-      letter-spacing: 1px;
-    }
-    .close-popup-btn:hover {
-      background: linear-gradient(90deg, #d1b97e 0%, #ff0000 100%);
-      color: #363636;
-      border-color: #f5c34b;
-    }
-    @media (max-width: 600px) {
-      .lux-navbar { padding: 0 15px;}
-      .lux-bg-title {width: 94vw; font-size: 1.3em;}
-      .lux-container {max-width: 95vw; padding: 22px 10px;}
-      .diamond-bg { width: 90vw; height: 36vw;}
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>YouTube Playbutton Achievement Tracker — Luxury UI</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-1: #0b0b0d;
+    --bg-2: #111215;
+    --card: rgba(255,255,255,0.03);
+    --glass-border: rgba(255,255,255,0.06);
+    --gold:#d4af37;
+    --gold-2:#f7d66b;
+    --silver:#c0c6cc;
+    --diamond:#e6f0ff;
+    --muted: rgba(255,255,255,0.7);
+    --accent: linear-gradient(90deg,var(--gold),var(--gold-2));
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    background: radial-gradient(1200px 400px at 10% 10%, rgba(255,255,255,0.02), transparent),
+                linear-gradient(180deg,var(--bg-1),var(--bg-2));
+    color:#fff;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+  }
+
+  .wrap{max-width:1200px;margin:0 auto;padding:48px 24px}
+  header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{
+    width:56px;height:44px;border-radius:12px;
+    background:linear-gradient(160deg,#111214 0%, #1b1b1e 60%);
+    display:inline-grid;place-items:center;border:1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6), inset 0 -6px 20px rgba(255,255,255,0.02);
+  }
+  .brand h1{font-size:15px;margin:0;letter-spacing:0.6px}
+  .brand p{margin:0;font-size:12px;opacity:0.8;color:var(--muted)}
+
+  nav{display:flex;gap:14px;align-items:center}
+  .btn-sign{padding:10px 16px;border-radius:12px;background:linear-gradient(90deg,#f7d66b,#d4af37);color:#111;font-weight:700;border:none;cursor:pointer;box-shadow:0 12px 40px rgba(212,175,55,0.12)}
+  .btn-sign:active{transform:translateY(1px)}
+
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1fr 520px;gap:34px;align-items:center;padding:30px 0}
+  @media (max-width:880px){ .hero{grid-template-columns:1fr; } .wrap{padding:28px 16px} }
+
+  .hero h2{font-weight:900;font-size:44px;line-height:0.95;margin:0}
+  .hero p{color:rgba(255,255,255,0.74);max-width:660px;margin-top:14px}
+
+  .controls{margin-top:20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .cta{
+    background:var(--accent);border:none;padding:16px 30px;border-radius:14px;font-weight:800;color:#0b0b0b;cursor:pointer;
+    box-shadow: 0 18px 50px rgba(213,169,69,0.12);transition:transform .25s ease,box-shadow .25s ease;
+  }
+  .cta:hover{transform:translateY(-6px);box-shadow: 0 26px 80px rgba(213,169,69,0.18)}
+  .secondary{
+    padding:12px 18px;border-radius:12px;border:1px solid var(--glass-border);background:transparent;color:var(--muted);
+  }
+
+  /* amount */
+  .amount{margin-top:18px;font-size:28px;font-weight:800;letter-spacing:0.6px}
+  .amount small{font-weight:600;color:rgba(255,255,255,0.62);font-size:12px;margin-left:10px}
+
+  /* showcase grid */
+  .showcase{background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent); padding:26px;border-radius:18px;border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:640px){ .grid{grid-template-columns:repeat(2,1fr)} }
+
+  .card{padding:18px;border-radius:14px; background:var(--card); border:1px solid var(--glass-border); display:flex;align-items:center;gap:14px;position:relative;overflow:hidden}
+  .card::after{content:'';position:absolute;left:-120%;top:-40%;width:40%;height:220%;background:linear-gradient(120deg,rgba(255,255,255,0),rgba(255,255,255,0.34),rgba(255,255,255,0));transform:rotate(24deg);animation:shine 3s linear infinite;mix-blend-mode:overlay}
+  @keyframes shine{to{left:140%}}
+
+  .floating{animation:floaty 5.5s ease-in-out infinite}
+  @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+  .play-wrap{width:92px;height:66px;border-radius:12px;display:grid;place-items:center;position:relative;box-shadow:0 18px 40px rgba(0,0,0,0.45)}
+  .meta{font-size:14px;font-weight:700}
+  .sub{font-size:12px;color:rgba(255,255,255,0.6)}
+
+  /* variants */
+  .gold{background:linear-gradient(180deg,#fff8ec,#f7e1a8);box-shadow:0 12px 40px rgba(213,169,69,0.12);color:#111}
+  .silver{background:linear-gradient(180deg,#f6f8fb,#e0e6ee);box-shadow:0 12px 34px rgba(140,150,170,0.08);color:#1f2937}
+  .diamond{background:linear-gradient(180deg,#ffffff,#e9f1ff);box-shadow:0 18px 60px rgba(140,170,255,0.12);color:#0b1b2b}
+
+  /* glass section */
+  .glass-panel{margin-top:28px;padding:22px;border-radius:14px;background:rgba(255,255,255,0.02);border:1px solid var(--glass-border);backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .glass-panel p{margin:0;color:var(--muted)}
+
+  /* modal */
+  .modal-back{position:fixed;inset:0;background:rgba(2,2,2,0.6);display:none;align-items:center;justify-content:center;z-index:120}
+  .modal{width:92%;max-width:520px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:20px;border-radius:16px;border:1px solid var(--glass-border);backdrop-filter:blur(10px);color:#fff}
+  .modal .heading{display:flex;align-items:center;gap:12px}
+  .ylogo{width:44px;height:32px;border-radius:8px;display:grid;place-items:center;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.03)}
+  .modal .actions{display:flex;gap:12px;margin-top:18px}
+  .btn-confirm{flex:1;padding:12px 16px;border-radius:12px;background:var(--accent);border:none;color:#111;font-weight:800;cursor:pointer}
+  .btn-cancel{padding:10px 14px;border-radius:12px;border:1px solid var(--glass-border);background:transparent;color:var(--muted);cursor:pointer}
+
+  /* success */
+  .success-row{display:flex;align-items:center;gap:12px;margin-top:14px}
+  .tick{width:36px;height:36px;border-radius:12px;background:linear-gradient(180deg,#0f2d17,#0b2b1a);display:grid;place-items:center}
+
+  footer{margin-top:48px;padding:28px 0;color:rgba(255,255,255,0.6);font-size:13px;text-align:center}
+
+  /* small touches */
+  .muted{color:var(--muted);font-size:13px}
+  .small{font-size:12px;color:rgba(255,255,255,0.6)}
+</style>
 </head>
 <body>
-  <div class="lux-navbar">
-    <div class="branding">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube Logo">
-      <span>YouTube</span>
-      <div class="diamond">⧫</div><!-- small diamond for luxury feel -->
-      <span class="right-title">Abhinav Account</span>
-    </div>
-    <div class="profile">A</div>
-  </div>
-  <div class="diamond-bg">
-    <!-- SVG Diamond Play Button watermark (background, large and faint) -->
-    <svg width="600" height="600" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Diamond outline in gold -->
-      <polygon points="100,15 190,100 100,185 10,100"
-        stroke="#ead690" stroke-width="7" fill="white" fill-opacity="0.18"/>
-      <!-- Play triangle in center -->
-      <polygon points="82,76 82,123 135,99.5"
-        fill="#f5c34b" fill-opacity="0.45"/>
-      <!-- Extra diamond accent -->
-      <polygon points="100,37 172,100 100,163 28,100"
-        stroke="#d1b97e" stroke-width="3.2" fill="white" fill-opacity="0.11"/>
-    </svg>
-  </div>
-  <div class="lux-bg-title">
-    Abhinav Account
-  </div>
-  <div class="lux-container">
-    <h2>Add Bank Account</h2>
-    <form id="bank-account-form">
-      <div class="form-group">
-        <label for="bank-name">Bank Name</label>
-        <input type="text" id="bank-name" name="bank-name" placeholder="Enter bank name" required>
+
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden>
+        <!-- minimal play icon -->
+        <svg width="36" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1.5" y="3" width="21" height="14" rx="3" fill="#fff" opacity="0.06"/>
+          <path d="M10 8L16 11L10 14V8Z" fill="#fff"/>
+        </svg>
       </div>
-      <div class="form-group">
-        <label for="account-number">Account Number</label>
-        <input type="text" id="account-number" name="account-number" placeholder="Enter account number" required>
+      <div>
+        <h1>YOUTUBE PLAYBUTTON</h1>
+        <p>Achievement Tracker — Premium</p>
       </div>
-      <div class="form-group">
-        <label for="ifsc-code">IFSC Code</label>
-        <input type="text" id="ifsc-code" name="ifsc-code" placeholder="Enter IFSC code" required>
+    </div>
+
+    <nav>
+      <div class="small muted">Home • Achievements • Account</div>
+      <button class="btn-sign" style="margin-left:14px">Sign In</button>
+    </nav>
+  </header>
+
+  <main class="hero" id="hero">
+    <section>
+      <h2>YOUTUBE PLAYBUTTON<br/>ACHIEVEMENT TRACKER</h2>
+      <p>Modern, premium, and luxurious UI to showcase your YouTube Play Buttons — metallic reflections, glassmorphism, cinematic typography and silky smooth animations inspired by top-tier product pages.</p>
+
+      <div class="controls">
+        <button id="show-balance" class="cta" aria-live="polite">SHOW TOTAL BALANCE EARNED</button>
+        <button id="check-account" class="secondary">CHECK YOUR ACCOUNT</button>
+        <div style="flex-basis:100%;height:0"></div>
+        <div class="amount"><span id="amountText">$0</span><small>TOTAL</small></div>
       </div>
-      <button type="submit" class="lux-btn">Add Account</button>
-    </form>
-  </div>
-  <!-- Success Popup Modal 1 -->
-  <div class="popup-overlay" id="successPopup">
-    <div class="popup-modal">
-      <img class="yt-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube Logo">
-      <h3>Congratulations Abhinav!</h3>
-      <p>Your account added successfully.</p>
-      <button class="close-popup-btn" onclick="showCreditedPopup()">Continue</button>
+
+      <div class="glass-panel" style="margin-top:18px">
+        <div>
+          <strong style="font-size:15px">Design & Motion</strong>
+          <p class="small">Parallax scroll, metallic shine, glass blur and float interactions for a luxury feel.</p>
+        </div>
+        <div>
+          <button class="btn-sign">Export Template</button>
+        </div>
+      </div>
+    </section>
+
+    <aside>
+      <div class="showcase" id="showcase">
+        <div class="grid">
+          <!-- 2 Gold -->
+          <div class="card floating" data-speed="0.9">
+            <div class="play-wrap gold">
+              <svg width="36" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M9.5 7.5L16 11L9.5 14.5V7.5Z" fill="#221a05"/>
+              </svg>
+            </div>
+            <div>
+              <div class="meta">Golden Playbutton 1</div>
+              <div class="sub">Unlocked</div>
+            </div>
+          </div>
+
+          <div class="card floating" data-speed="1.05">
+            <div class="play-wrap gold">
+              <svg width="36" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M9.5 7.5L16 11L9.5 14.5V7.5Z" fill="#221a05"/>
+              </svg>
+            </div>
+            <div>
+              <div class="meta">Golden Playbutton 2</div>
+              <div class="sub">Unlocked</div>
+            </div>
+          </div>
+
+          <!-- 3 Silver -->
+          <div class="card floating" data-speed="0.7">
+            <div class="play-wrap silver">
+              <svg width="36" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M9.5 7.5L16 11L9.5 14.5V7.5Z" fill="#111827"/>
+              </svg>
+            </div>
+            <div>
+              <div class="meta">Silver Playbutton 1</div>
+              <div class="sub">Unlocked</div>
+            </div>
+          </div>
+
+          <div class="card floating" data-speed="0.85">
+            <div class="play-wrap silver">
+              <svg width="36" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M9.5 7.5L16 11L9.5 14.5V7.5Z" fill="#111827"/>
+              </svg>
+            </div>
+            <div>
+              <div class="meta">Silver Playbutton 2</div>
+              <div class="sub">Unlocked</div>
+            </div>
+          </div>
+
+          <div class="card floating" data-speed="1.15">
+            <div class="play-wrap silver">
+              <svg width="36" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M9.5 7.5L16 11L9.5 14.5V7.5Z" fill="#111827"/>
+              </svg>
+            </div>
+            <div>
+              <div class="meta">Silver Playbutton 3</div>
+              <div class="sub">Unlocked</div>
+            </div>
+          </div>
+
+          <!-- 1 Diamond -->
+          <div class="card floating" style="grid-column:span 2" data-speed="0.95">
+            <div class="play-wrap diamond" style="width:124px;height:92px;border-radius:18px">
+              <!-- diamond sparkle svg -->
+              <svg width="84" height="64" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M12 3l3 4 4 2-4 5-3 5-3-5-4-5 4-2 3-4z" fill="#0b1b2b" opacity="0.96"/>
+              </svg>
+            </div>
+            <div>
+              <div class="meta">Diamond Playbutton</div>
+              <div class="sub">Unlocked</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    Crafted for luxury creators • Metallic reflections • Smooth micro-interactions
+  </footer>
+</div>
+
+<!-- Modal -->
+<div id="modalBack" class="modal-back" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal" role="document">
+    <div class="heading">
+      <div class="ylogo" aria-hidden>
+        <!-- minimal YouTube logo (luxury style) -->
+        <svg width="24" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1.5" y="3" width="21" height="14" rx="3" fill="#fff" opacity="0.06"/>
+          <path d="M9.5 7.5L15.5 11L9.5 14.5V7.5Z" fill="#fff"/>
+        </svg>
+      </div>
+      <div>
+        <div style="font-weight:800">Check Your Account</div>
+        <div class="small muted">Confirm to add the account to the tracker</div>
+      </div>
+    </div>
+
+    <div class="actions" style="margin-top:14px">
+      <button id="confirmBtn" class="btn-confirm">Confirm</button>
+      <button id="closeBtn" class="btn-cancel">Cancel</button>
+    </div>
+
+    <div id="successArea" style="display:none">
+      <div class="success-row">
+        <div class="tick">
+          <svg width="18" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6L9 17L4 12"></path>
+          </svg>
+        </div>
+        <div>
+          <div style="font-weight:700">Your Account Has Been Successfully Added</div>
+          <div class="small muted">Name: <strong style="color:#fff">ANOP</strong></div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px;display:flex;align-items:center;gap:10px">
+        <div class="ylogo" aria-hidden>
+          <svg width="20" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1.5" y="3" width="21" height="14" rx="3" fill="#fff" opacity="0.06"/>
+            <path d="M9.5 7.5L15.5 11L9.5 14.5V7.5Z" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="small muted">Added to YouTube</div>
+      </div>
     </div>
   </div>
-  <!-- Credited Popup Modal 2 -->
-  <div class="popup-overlay" id="creditedPopup">
-    <div class="popup-modal">
-      <img class="yt-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube Logo">
-      <h3>Congratulations!</h3>
-      <p>The amount of <span style="color:#ff0000;">$345,000</span> will be credited to your account on <span style="color:#b78b1b;">25 November</span>.<br />Congratulations!</p>
-      <button class="close-popup-btn" onclick="closeAllPopups()">Close</button>
-    </div>
-  </div>
-  <script>
-    function showCreditedPopup() {
-      document.getElementById('successPopup').classList.remove('show');
-      document.getElementById('creditedPopup').classList.add('show');
-    }
-    function closeAllPopups() {
-      document.getElementById('successPopup').classList.remove('show');
-      document.getElementById('creditedPopup').classList.remove('show');
-    }
-    document.getElementById('bank-account-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('successPopup').classList.add('show');
-      // Optionally, clear form:
-      // this.reset();
+</div>
+
+<script>
+  // Parallax scroll for elements with data-speed
+  const parallaxEls = document.querySelectorAll('[data-speed]');
+  function onScrollParallax() {
+    const y = window.scrollY;
+    parallaxEls.forEach(el => {
+      const speed = parseFloat(el.dataset.speed) || 1;
+      el.style.transform = `translateY(${y * (0.03 * (speed - 1)) }px)`;
     });
-  </script>
+  }
+  window.addEventListener('scroll', onScrollParallax, {passive:true});
+
+  // Counting animation
+  const showBtn = document.getElementById('show-balance');
+  const amountText = document.getElementById('amountText');
+  const checkBtn = document.getElementById('check-account');
+
+  const TARGET = 6000000; // 6 million
+  const DURATION = 2400; // ms
+  let animating = false;
+  let lastValue = 0;
+
+  function formatMoney(n){
+    return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+  }
+
+  function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
+
+  function animateToTarget() {
+    if (animating) return;
+    animating = true;
+    lastValue = 0;
+    const start = performance.now();
+    function step(now){
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / DURATION, 1);
+      const eased = easeOutCubic(progress);
+      const value = Math.floor(eased * TARGET);
+      if (value !== lastValue) {
+        amountText.textContent = formatMoney(value);
+        lastValue = value;
+      }
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        animating = false;
+        // reveal check button visually (already exists)
+        // small pulse effect:
+        checkBtn.animate([{transform:'scale(1)'},{transform:'scale(1.03)'},{transform:'scale(1)'}],{duration:600,iterations:1});
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  showBtn.addEventListener('click', () => {
+    animateToTarget();
+  });
+
+  // Modal logic
+  const modalBack = document.getElementById('modalBack');
+  const confirmBtn = document.getElementById('confirmBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const successArea = document.getElementById('successArea');
+
+  // open modal on check account click
+  checkBtn.addEventListener('click', () => {
+    modalBack.style.display = 'flex';
+    modalBack.setAttribute('aria-hidden','false');
+    successArea.style.display = 'none';
+    confirmBtn.style.display = 'inline-block';
+  });
+
+  // close modal
+  closeBtn.addEventListener('click', () => {
+    modalBack.style.display = 'none';
+    modalBack.setAttribute('aria-hidden','true');
+  });
+
+  // confirm -> show success
+  confirmBtn.addEventListener('click', () => {
+    // small confirm animation:
+    confirmBtn.animate([{transform:'translateY(0)'},{transform:'translateY(-6px)'},{transform:'translateY(0)'}],{duration:300,iterations:1});
+    // show success after micro delay
+    setTimeout(() => {
+      confirmBtn.style.display = 'none';
+      successArea.style.display = 'block';
+      // set amount to final target firmly
+      amountText.textContent = formatMoney(TARGET);
+      // success pulse
+      successArea.animate([{opacity:0, transform:'translateY(6px)'},{opacity:1,transform:'translateY(0)'}],{duration:420,fill:'forwards'});
+    }, 450);
+  });
+
+  // close modal when clicking outside modal content
+  modalBack.addEventListener('click', (e) => {
+    if (e.target === modalBack) {
+      modalBack.style.display = 'none';
+      modalBack.setAttribute('aria-hidden','true');
+    }
+  });
+
+  // subtle entrance animations
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.floating').forEach((el, i) => {
+      el.style.opacity = '0';
+      const delay = 120 + i * 60;
+      setTimeout(()=>{ el.style.transition = 'opacity .6s ease, transform .9s cubic-bezier(.2,.9,.2,1)'; el.style.opacity = '1'; }, delay);
+    });
+  });
+</script>
+
 </body>
 </html>
