@@ -3,412 +3,341 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>YouTube Playbutton Achievement Tracker — Luxury UI</title>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>dropshipping.io — Luxury Reveal Experience</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg-1: #0b0b0d;
-    --bg-2: #111215;
-    --card: rgba(255,255,255,0.03);
-    --glass-border: rgba(255,255,255,0.06);
-    --gold:#d4af37;
-    --gold-2:#f7d66b;
-    --silver:#c0c6cc;
-    --diamond:#e6f0ff;
-    --muted: rgba(255,255,255,0.7);
-    --accent: linear-gradient(90deg,var(--gold),var(--gold-2));
-  }
+:root{
+  --bg1:#030405; --bg2:#0b0c10;
+  --gold:#d4af37; --gold2:#f7d66b;
+  --muted:rgba(255,255,255,0.75);
+  --glass:rgba(255,255,255,0.03);
+  --accent:linear-gradient(90deg,var(--gold),var(--gold2));
+  --success:#10b981;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:radial-gradient(1000px 380px at 10% 8%, rgba(255,255,255,0.02), transparent),linear-gradient(180deg,var(--bg1),var(--bg2));color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:48px 28px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;gap:14px;align-items:center}
+.logo{width:72px;height:52px;border-radius:14px;background:linear-gradient(160deg,#0b0b0d,#151619);display:grid;place-items:center;border:1px solid rgba(255,255,255,0.04);box-shadow:0 40px 140px rgba(0,0,0,0.65) inset}
+.title{font-weight:900;font-size:18px;letter-spacing:0.6px}
+.sub{color:var(--muted);font-size:13px}
+.controls{display:flex;gap:12px;align-items:center}
+.btn{padding:12px 18px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
+.btn-primary{background:var(--accent);color:#0b0b0b;box-shadow:0 30px 120px rgba(212,169,69,0.12)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
 
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-    background: radial-gradient(1200px 400px at 10% 10%, rgba(255,255,255,0.02), transparent),
-                linear-gradient(180deg,var(--bg-1),var(--bg-2));
-    color:#fff;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    overflow-x:hidden;
-  }
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;margin-top:36px}
+@media(max-width:980px){.hero{grid-template-columns:1fr}}
+.h1{font-size:44px;font-weight:900;margin:0;line-height:0.95}
+.h-desc{color:var(--muted);margin-top:12px;max-width:720px}
 
-  .wrap{max-width:1200px;margin:0 auto;padding:48px 24px}
-  header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
-  .brand{display:flex;align-items:center;gap:12px}
-  .logo{
-    width:56px;height:44px;border-radius:12px;
-    background:linear-gradient(160deg,#111214 0%, #1b1b1e 60%);
-    display:inline-grid;place-items:center;border:1px solid rgba(255,255,255,0.03);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.6), inset 0 -6px 20px rgba(255,255,255,0.02);
-  }
-  .brand h1{font-size:15px;margin:0;letter-spacing:0.6px}
-  .brand p{margin:0;font-size:12px;opacity:0.8;color:var(--muted)}
+/* glass panel */
+.panel{margin-top:18px;padding:22px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(10px);box-shadow:0 24px 120px rgba(0,0,0,0.6)}
 
-  nav{display:flex;gap:14px;align-items:center}
-  .btn-sign{padding:10px 16px;border-radius:12px;background:linear-gradient(90deg,#f7d66b,#d4af37);color:#111;font-weight:700;border:none;cursor:pointer;box-shadow:0 12px 40px rgba(212,175,55,0.12)}
-  .btn-sign:active{transform:translateY(1px)}
+/* action buttons */
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.big-btn{font-size:16px;padding:16px 22px;border-radius:14px}
+.counter{font-size:34px;font-weight:900;margin-top:14px;letter-spacing:0.6px}
 
-  /* HERO */
-  .hero{display:grid;grid-template-columns:1fr 520px;gap:34px;align-items:center;padding:30px 0}
-  @media (max-width:880px){ .hero{grid-template-columns:1fr; } .wrap{padding:28px 16px} }
+/* map card */
+.map-card{margin-top:18px;padding:18px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.014),transparent);border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(8px)}
+.map-visual{height:220px;border-radius:12px;background:linear-gradient(180deg,#08121a,#061018);display:grid;place-items:center;border:1px solid rgba(255,255,255,0.02);position:relative;overflow:hidden}
+.map-pin{width:86px;height:86px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #ff6b6b,#ff2d2d);display:grid;place-items:center;box-shadow:0 30px 120px rgba(255,40,40,0.12);transform:translateY(20px);opacity:0}
 
-  .hero h2{font-weight:900;font-size:44px;line-height:0.95;margin:0}
-  .hero p{color:rgba(255,255,255,0.74);max-width:660px;margin-top:14px}
+/* points list */
+.points{margin-top:12px}
+.points li{margin:8px 0;color:var(--muted)}
 
-  .controls{margin-top:20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-  .cta{
-    background:var(--accent);border:none;padding:16px 30px;border-radius:14px;font-weight:800;color:#0b0b0b;cursor:pointer;
-    box-shadow: 0 18px 50px rgba(213,169,69,0.12);transition:transform .25s ease,box-shadow .25s ease;
-  }
-  .cta:hover{transform:translateY(-6px);box-shadow: 0 26px 80px rgba(213,169,69,0.18)}
-  .secondary{
-    padding:12px 18px;border-radius:12px;border:1px solid var(--glass-border);background:transparent;color:var(--muted);
-  }
+/* area buttons */
+.area-grid{display:flex;gap:10px;margin-top:14px}
+.area-btn{padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);cursor:pointer;font-weight:700}
 
-  /* amount */
-  .amount{margin-top:18px;font-size:28px;font-weight:800;letter-spacing:0.6px}
-  .amount small{font-weight:600;color:rgba(255,255,255,0.62);font-size:12px;margin-left:10px}
+/* bottom center 4 buttons */
+.bottom-center{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);display:flex;gap:12px;z-index:999}
+.bottom-center .bbtn{padding:12px 14px;border-radius:12px;background:linear-gradient(90deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.04);cursor:pointer;font-weight:800}
 
-  /* showcase grid */
-  .showcase{background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent); padding:26px;border-radius:18px;border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px)}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  @media (max-width:640px){ .grid{grid-template-columns:repeat(2,1fr)} }
+/* reveal panels */
+.reveal{margin-top:18px;display:none;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(8px)}
 
-  .card{padding:18px;border-radius:14px; background:var(--card); border:1px solid var(--glass-border); display:flex;align-items:center;gap:14px;position:relative;overflow:hidden}
-  .card::after{content:'';position:absolute;left:-120%;top:-40%;width:40%;height:220%;background:linear-gradient(120deg,rgba(255,255,255,0),rgba(255,255,255,0.34),rgba(255,255,255,0));transform:rotate(24deg);animation:shine 3s linear infinite;mix-blend-mode:overlay}
-  @keyframes shine{to{left:140%}}
+/* premium animation helpers */
+.shine-line{height:6px;border-radius:8px;background:linear-gradient(90deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02));overflow:hidden}
+.shine-line > i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width 1.2s cubic-bezier(.2,.9,.2,1)}
 
-  .floating{animation:floaty 5.5s ease-in-out infinite}
-  @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+/* cinematic popup */
+.cinema-pop{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.6));z-index:10000}
+.cinema-card{width:760px;max-width:90%;padding:28px;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(14px);box-shadow:0 80px 280px rgba(0,0,0,0.8);text-align:center}
+.cinema-title{font-size:32px;font-weight:900;margin:0}
+.cinema-sub{color:var(--muted);margin-top:8px}
 
-  .play-wrap{width:92px;height:66px;border-radius:12px;display:grid;place-items:center;position:relative;box-shadow:0 18px 40px rgba(0,0,0,0.45)}
-  .meta{font-size:14px;font-weight:700}
-  .sub{font-size:12px;color:rgba(255,255,255,0.6)}
-
-  /* variants */
-  .gold{background:linear-gradient(180deg,#fff8ec,#f7e1a8);box-shadow:0 12px 40px rgba(213,169,69,0.12);color:#111}
-  .silver{background:linear-gradient(180deg,#f6f8fb,#e0e6ee);box-shadow:0 12px 34px rgba(140,150,170,0.08);color:#1f2937}
-  .diamond{background:linear-gradient(180deg,#ffffff,#e9f1ff);box-shadow:0 18px 60px rgba(140,170,255,0.12);color:#0b1b2b}
-
-  /* glass section */
-  .glass-panel{margin-top:28px;padding:22px;border-radius:14px;background:rgba(255,255,255,0.02);border:1px solid var(--glass-border);backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;gap:16px}
-  .glass-panel p{margin:0;color:var(--muted)}
-
-  /* modal */
-  .modal-back{position:fixed;inset:0;background:rgba(2,2,2,0.6);display:none;align-items:center;justify-content:center;z-index:120}
-  .modal{width:92%;max-width:520px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:20px;border-radius:16px;border:1px solid var(--glass-border);backdrop-filter:blur(10px);color:#fff}
-  .modal .heading{display:flex;align-items:center;gap:12px}
-  .ylogo{width:44px;height:32px;border-radius:8px;display:grid;place-items:center;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.03)}
-  .modal .actions{display:flex;gap:12px;margin-top:18px}
-  .btn-confirm{flex:1;padding:12px 16px;border-radius:12px;background:var(--accent);border:none;color:#111;font-weight:800;cursor:pointer}
-  .btn-cancel{padding:10px 14px;border-radius:12px;border:1px solid var(--glass-border);background:transparent;color:var(--muted);cursor:pointer}
-
-  /* success */
-  .success-row{display:flex;align-items:center;gap:12px;margin-top:14px}
-  .tick{width:36px;height:36px;border-radius:12px;background:linear-gradient(180deg,#0f2d17,#0b2b1a);display:grid;place-items:center}
-
-  footer{margin-top:48px;padding:28px 0;color:rgba(255,255,255,0.6);font-size:13px;text-align:center}
-
-  /* small touches */
-  .muted{color:var(--muted);font-size:13px}
-  .small{font-size:12px;color:rgba(255,255,255,0.6)}
+/* small */
+.small{font-size:13px;color:var(--muted);margin-top:8px}
 </style>
 </head>
 <body>
-
-<div class="wrap">
-  <header>
+<div class="container">
+  <header class="header">
     <div class="brand">
       <div class="logo" aria-hidden>
-        <!-- minimal play icon -->
-        <svg width="36" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1.5" y="3" width="21" height="14" rx="3" fill="#fff" opacity="0.06"/>
-          <path d="M10 8L16 11L10 14V8Z" fill="#fff"/>
-        </svg>
+        <svg width="48" height="34" viewBox="0 0 24 24" fill="none"><rect x="1.5" y="3" width="21" height="14" rx="3" fill="#fff" opacity="0.06"/><path d="M10 8L16 11L10 14V8Z" fill="#fff"/></svg>
       </div>
       <div>
-        <h1>YOUTUBE PLAYBUTTON</h1>
-        <p>Achievement Tracker — Premium</p>
+        <div class="title">dropshipping.io</div>
+        <div class="sub">Luxury reveal experience — premium animations</div>
       </div>
     </div>
-
-    <nav>
-      <div class="small muted">Home • Achievements • Account</div>
-      <button class="btn-sign" style="margin-left:14px">Sign In</button>
-    </nav>
+    <div class="controls">
+      <button class="btn btn-ghost">Sign In</button>
+      <button class="btn btn-primary">Contact</button>
+    </div>
   </header>
 
-  <main class="hero" id="hero">
+  <div class="hero">
     <section>
-      <h2>YOUTUBE PLAYBUTTON<br/>ACHIEVEMENT TRACKER</h2>
-      <p>Modern, premium, and luxurious UI to showcase your YouTube Play Buttons — metallic reflections, glassmorphism, cinematic typography and silky smooth animations inspired by top-tier product pages.</p>
+      <h1 class="h1">dropshipping.io — Luxury Reveal</h1>
+      <p class="h-desc">Experience a cinematic, Apple/Nike/Tesla-style luxury page. Use the controls to reveal the <strong>budget</strong>, <strong>location</strong>, <strong>area</strong>, and timeline for your house launch.</p>
 
-      <div class="controls">
-        <button id="show-balance" class="cta" aria-live="polite">SHOW TOTAL BALANCE EARNED</button>
-        <button id="check-account" class="secondary">CHECK YOUR ACCOUNT</button>
-        <div style="flex-basis:100%;height:0"></div>
-        <div class="amount"><span id="amountText">$0</span><small>TOTAL</small></div>
+      <div class="panel">
+        <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+          <div>
+            <div style="font-weight:800">Interactive Reveals</div>
+            <div class="small">High-end animations with premium motion design.</div>
+          </div>
+          <div style="display:flex;gap:10px">
+            <button id="revealBudget" class="btn btn-primary big-btn">Budget Reveal</button>
+            <button id="revealLocation" class="btn btn-ghost big-btn">Reveal Location</button>
+            <button id="showAreaBtns" class="btn btn-ghost big-btn">Show Area Options</button>
+          </div>
+        </div>
+
+        <div id="budgetPanel" class="reveal">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+            <div>
+              <div style="color:var(--muted)">Total Budget</div>
+              <div id="budgetCounter" class="counter">$0</div>
+              <div class="small">Budget revealed with cinematic count-up animation.</div>
+            </div>
+            <div style="width:40%;min-width:220px">
+              <div class="shine-line"><i id="budgetShine"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="locationPanel" class="reveal">
+          <div class="map-card">
+            <div class="map-visual">
+              <div id="mapPin" class="map-pin" aria-hidden>
+                <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#fff"/><circle cx="12" cy="9" r="2.5" fill="#ff2d2d"/></svg>
+              </div>
+            </div>
+            <ul class="points">
+              <li>📍 <strong>1.5 km away</strong></li>
+              <li>🏫 <strong>Easy access to international school</strong></li>
+              <li>🛣️ <strong>Near Ajmer Road highway</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="areaPanel" class="reveal">
+          <div style="font-weight:800">Choose Area Detail</div>
+          <div class="area-grid">
+            <button class="area-btn" data-area="2500">Option 1</button>
+            <button class="area-btn" data-area="2500">Option 2</button>
+            <button class="area-btn" data-area="2500">Option 3</button>
+          </div>
+          <div id="areaShow" class="small" style="margin-top:12px"></div>
+        </div>
+
+        <div id="bottomReveal" class="reveal">
+          <div style="display:flex;flex-direction:column;gap:10px;align-items:center">
+            <div style="font-weight:800">Schedule & Design</div>
+            <div class="small">Click the four buttons below to reveal production details.</div>
+            <div style="display:flex;gap:10px;margin-top:12px">
+              <button class="bbtn btn-primary" data-info="start">Reveal 1</button>
+              <button class="bbtn btn-primary" data-info="design">Reveal 2</button>
+              <button class="bbtn btn-primary" data-info="date">Reveal 3</button>
+              <button class="bbtn btn-primary" data-info="final">Reveal 4</button>
+            </div>
+            <div id="bottomInfo" class="small" style="margin-top:12px"></div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="glass-panel" style="margin-top:18px">
-        <div>
-          <strong style="font-size:15px">Design & Motion</strong>
-          <p class="small">Parallax scroll, metallic shine, glass blur and float interactions for a luxury feel.</p>
-        </div>
-        <div>
-          <button class="btn-sign">Export Template</button>
-        </div>
-      </div>
     </section>
 
     <aside>
-      <div class="showcase" id="showcase">
-        <div class="grid">
-          <!-- 2 Gold -->
-          <div class="card floating" data-speed="0.9">
-            <div class="play-wrap gold">
-              <svg width="36" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path d="M9.5 7.5L16 11L9.5 14.5V7.5Z" fill="#221a05"/>
-              </svg>
-            </div>
-            <div>
-              <div class="meta">Golden Playbutton 1</div>
-              <div class="sub">Unlocked</div>
-            </div>
-          </div>
-
-          <div class="card floating" data-speed="1.05">
-            <div class="play-wrap gold">
-              <svg width="36" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path d="M9.5 7.5L16 11L9.5 14.5V7.5Z" fill="#221a05"/>
-              </svg>
-            </div>
-            <div>
-              <div class="meta">Golden Playbutton 2</div>
-              <div class="sub">Unlocked</div>
-            </div>
-          </div>
-
-          <!-- 3 Silver -->
-          <div class="card floating" data-speed="0.7">
-            <div class="play-wrap silver">
-              <svg width="36" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path d="M9.5 7.5L16 11L9.5 14.5V7.5Z" fill="#111827"/>
-              </svg>
-            </div>
-            <div>
-              <div class="meta">Silver Playbutton 1</div>
-              <div class="sub">Unlocked</div>
-            </div>
-          </div>
-
-          <div class="card floating" data-speed="0.85">
-            <div class="play-wrap silver">
-              <svg width="36" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path d="M9.5 7.5L16 11L9.5 14.5V7.5Z" fill="#111827"/>
-              </svg>
-            </div>
-            <div>
-              <div class="meta">Silver Playbutton 2</div>
-              <div class="sub">Unlocked</div>
-            </div>
-          </div>
-
-          <div class="card floating" data-speed="1.15">
-            <div class="play-wrap silver">
-              <svg width="36" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path d="M9.5 7.5L16 11L9.5 14.5V7.5Z" fill="#111827"/>
-              </svg>
-            </div>
-            <div>
-              <div class="meta">Silver Playbutton 3</div>
-              <div class="sub">Unlocked</div>
-            </div>
-          </div>
-
-          <!-- 1 Diamond -->
-          <div class="card floating" style="grid-column:span 2" data-speed="0.95">
-            <div class="play-wrap diamond" style="width:124px;height:92px;border-radius:18px">
-              <!-- diamond sparkle svg -->
-              <svg width="84" height="64" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path d="M12 3l3 4 4 2-4 5-3 5-3-5-4-5 4-2 3-4z" fill="#0b1b2b" opacity="0.96"/>
-              </svg>
-            </div>
-            <div>
-              <div class="meta">Diamond Playbutton</div>
-              <div class="sub">Unlocked</div>
-            </div>
-          </div>
-
+      <div class="panel">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <div style="font-weight:900">Showcase</div>
+          <div style="color:var(--muted);font-size:13px">Exclusive preview</div>
         </div>
+        <div style="height:260px;border-radius:12px;background:linear-gradient(180deg,#07121a,#051018);display:grid;place-items:center;position:relative;overflow:hidden">
+          <div style="font-weight:900;font-size:20px">Premium Visual</div>
+          <div style="position:absolute;left:18px;bottom:18px;color:var(--muted);font-size:13px">2500 sq meters — Luxury Finish</div>
+        </div>
+        <div class="small" style="margin-top:12px">Motion: fast count-up, map pin pop, confetti, cinematic panels and premium text reveals.</div>
       </div>
     </aside>
-  </main>
-
-  <footer>
-    Crafted for luxury creators • Metallic reflections • Smooth micro-interactions
-  </footer>
+  </div>
 </div>
 
-<!-- Modal -->
-<div id="modalBack" class="modal-back" role="dialog" aria-modal="true" aria-hidden="true">
-  <div class="modal" role="document">
-    <div class="heading">
-      <div class="ylogo" aria-hidden>
-        <!-- minimal YouTube logo (luxury style) -->
-        <svg width="24" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1.5" y="3" width="21" height="14" rx="3" fill="#fff" opacity="0.06"/>
-          <path d="M9.5 7.5L15.5 11L9.5 14.5V7.5Z" fill="#fff"/>
-        </svg>
-      </div>
-      <div>
-        <div style="font-weight:800">Check Your Account</div>
-        <div class="small muted">Confirm to add the account to the tracker</div>
-      </div>
-    </div>
+<div class="bottom-center" id="bottomCenter">
+  <button class="bbtn" id="btn1">1</button>
+  <button class="bbtn" id="btn2">2</button>
+  <button class="bbtn" id="btn3">3</button>
+  <button class="bbtn" id="btn4">4</button>
+</div>
 
-    <div class="actions" style="margin-top:14px">
-      <button id="confirmBtn" class="btn-confirm">Confirm</button>
-      <button id="closeBtn" class="btn-cancel">Cancel</button>
-    </div>
-
-    <div id="successArea" style="display:none">
-      <div class="success-row">
-        <div class="tick">
-          <svg width="18" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 6L9 17L4 12"></path>
-          </svg>
-        </div>
-        <div>
-          <div style="font-weight:700">Your Account Has Been Successfully Added</div>
-          <div class="small muted">Name: <strong style="color:#fff">ANOP</strong></div>
-        </div>
-      </div>
-
-      <div style="margin-top:12px;display:flex;align-items:center;gap:10px">
-        <div class="ylogo" aria-hidden>
-          <svg width="20" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1.5" y="3" width="21" height="14" rx="3" fill="#fff" opacity="0.06"/>
-            <path d="M9.5 7.5L15.5 11L9.5 14.5V7.5Z" fill="#fff"/>
-          </svg>
-        </div>
-        <div class="small muted">Added to YouTube</div>
-      </div>
+<!-- cinematic popup -->
+<div class="cinema-pop" id="cinemaPop" aria-hidden="true">
+  <div class="cinema-card" role="dialog" aria-modal="true">
+    <div class="cinema-title" id="cinemaTitle">Cinematic Reveal</div>
+    <div class="cinema-sub" id="cinemaSub">Details appear here</div>
+    <div style="margin-top:20px">
+      <button id="closeCinema" class="btn btn-ghost">Close</button>
     </div>
   </div>
 </div>
 
 <script>
-  // Parallax scroll for elements with data-speed
-  const parallaxEls = document.querySelectorAll('[data-speed]');
-  function onScrollParallax() {
-    const y = window.scrollY;
-    parallaxEls.forEach(el => {
-      const speed = parseFloat(el.dataset.speed) || 1;
-      el.style.transform = `translateY(${y * (0.03 * (speed - 1)) }px)`;
-    });
+// Helpers
+function formatMoney(n){ return n.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}); }
+function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
+
+// Elements
+const revealBudget = document.getElementById('revealBudget');
+const budgetPanel = document.getElementById('budgetPanel');
+const budgetCounter = document.getElementById('budgetCounter');
+const budgetShine = document.getElementById('budgetShine');
+
+const revealLocation = document.getElementById('revealLocation');
+const locationPanel = document.getElementById('locationPanel');
+const mapPin = document.getElementById('mapPin');
+
+const showAreaBtns = document.getElementById('showAreaBtns');
+const areaPanel = document.getElementById('areaPanel');
+const areaShow = document.getElementById('areaShow');
+const areaBtns = document.querySelectorAll('.area-btn');
+
+const bottomReveal = document.getElementById('bottomReveal');
+const bottomInfo = document.getElementById('bottomInfo');
+const bottomBtns = document.querySelectorAll('.bbtn');
+
+const cinemaPop = document.getElementById('cinemaPop');
+const cinemaTitle = document.getElementById('cinemaTitle');
+const cinemaSub = document.getElementById('cinemaSub');
+const closeCinema = document.getElementById('closeCinema');
+
+// Budget reveal animation to $4,000,000
+const TARGET = 4000000;
+revealBudget.addEventListener('click', ()=>{
+  // show panel
+  budgetPanel.style.display = 'block';
+  // animate shine
+  budgetShine.style.width = '0%';
+  setTimeout(()=> budgetShine.style.width = '100%', 50);
+  // counting animation
+  let animating = true;
+  const DURATION = 1800;
+  const start = performance.now();
+  function step(now){
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / DURATION, 1);
+    const value = Math.floor(easeOutCubic(progress) * TARGET);
+    budgetCounter.textContent = formatMoney(value);
+    if(progress < 1) requestAnimationFrame(step);
+    else { budgetCounter.textContent = formatMoney(TARGET); animating=false; flashBudget(); }
   }
-  window.addEventListener('scroll', onScrollParallax, {passive:true});
+  requestAnimationFrame(step);
+});
 
-  // Counting animation
-  const showBtn = document.getElementById('show-balance');
-  const amountText = document.getElementById('amountText');
-  const checkBtn = document.getElementById('check-account');
+function flashBudget(){
+  budgetCounter.animate([{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}],{duration:700});
+}
 
-  const TARGET = 6000000; // 6 million
-  const DURATION = 2400; // ms
-  let animating = false;
-  let lastValue = 0;
+// Location reveal with luxe animation
+revealLocation.addEventListener('click', ()=>{
+  locationPanel.style.display = 'block';
+  // pop pin animation
+  mapPin.style.opacity = 0;
+  mapPin.style.transform = 'translateY(30px) scale(.6)';
+  setTimeout(()=>{
+    mapPin.style.transition = 'transform .9s cubic-bezier(.2,.9,.2,1), opacity .7s';
+    mapPin.style.opacity = 1;
+    mapPin.style.transform = 'translateY(0) scale(1)';
+    // small ripple pulse
+    const pulse = document.createElement('div');
+    pulse.style.position='absolute'; pulse.style.width='180px'; pulse.style.height='180px'; pulse.style.borderRadius='50%'; pulse.style.left='calc(50% - 90px)'; pulse.style.top='calc(50% - 90px)'; pulse.style.boxShadow='0 0 120px 20px rgba(255,45,45,0.08)'; pulse.style.opacity='0.9'; pulse.style.zIndex='2';
+    document.querySelector('.map-visual').appendChild(pulse);
+    pulse.animate([{opacity:0.9, transform:'scale(.6)'},{opacity:0, transform:'scale(1.8)'}],{duration:900}).onfinish=()=> pulse.remove();
+  },80);
+});
 
-  function formatMoney(n){
-    return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+// Show area options and area reveals
+showAreaBtns.addEventListener('click', ()=>{
+  areaPanel.style.display='block';
+  areaShow.textContent='';
+});
+areaBtns.forEach(btn=> btn.addEventListener('click', (e)=>{
+  const area = e.currentTarget.dataset.area;
+  // premium reveal animation
+  areaShow.textContent = '';
+  // create cinematic number reveal
+  const el = document.createElement('div'); el.style.fontWeight='900'; el.style.fontSize='22px'; el.style.letterSpacing='0.6px'; el.textContent='0 sq m'; areaShow.appendChild(el);
+  // animate to area (2500)
+  const TARGET_AREA = parseInt(area,10) || 2500;
+  const DURATION = 900;
+  const start = performance.now();
+  function s(now){ const p = Math.min((now-start)/DURATION,1); const v = Math.floor(easeOutCubic(p) * TARGET_AREA); el.textContent = v.toLocaleString() + ' sq meter'; if(p<1) requestAnimationFrame(s); else { el.textContent = TARGET_AREA.toLocaleString() + ' sq meter'; el.animate([{transform:'scale(1)'},{transform:'scale(1.04)'},{transform:'scale(1)'}],{duration:600}); } }
+  requestAnimationFrame(s);
+}));
+
+// Bottom center 4 buttons reveal schedule info
+bottomBtns.forEach(b=> b.addEventListener('click', (e)=>{
+  const key = e.currentTarget.dataset.info;
+  bottomReveal.style.display='block';
+  bottomInfo.textContent='';
+  // luxury transitions depending on key
+  if(key==='start'){
+    showCinema('House Construction Start','Your house starting on 2 December — premium modern process begins.');
+  } else if(key==='design'){
+    showCinema('Design Timeline','Design by yourself — final design deadline: 15 November.');
+  } else if(key==='date'){
+    showCinema('Key Dates','2 December: Groundwork begins. 15 November: Final designs due.');
+  } else if(key==='final'){
+    showCinema('Final Note','Premium modern execution — full cinematic delivery schedule shown.');
   }
+}));
 
-  function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
+function showCinema(title, sub){
+  cinemaTitle.textContent = title;
+  cinemaSub.textContent = sub;
+  cinemaPop.style.display='flex';
+  cinemaPop.setAttribute('aria-hidden','false');
+  // hero cinematic animation
+  const card = document.querySelector('.cinema-card');
+  card.animate([{transform:'translateY(20px) scale(.98)', opacity:0},{transform:'translateY(-8px) scale(1.02)', opacity:1},{transform:'translateY(0) scale(1)', opacity:1}],{duration:900,easing:'cubic-bezier(.2,.9,.2,1)'});
+}
 
-  function animateToTarget() {
-    if (animating) return;
-    animating = true;
-    lastValue = 0;
-    const start = performance.now();
-    function step(now){
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / DURATION, 1);
-      const eased = easeOutCubic(progress);
-      const value = Math.floor(eased * TARGET);
-      if (value !== lastValue) {
-        amountText.textContent = formatMoney(value);
-        lastValue = value;
-      }
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-        animating = false;
-        // reveal check button visually (already exists)
-        // small pulse effect:
-        checkBtn.animate([{transform:'scale(1)'},{transform:'scale(1.03)'},{transform:'scale(1)'}],{duration:600,iterations:1});
-      }
-    }
-    requestAnimationFrame(step);
-  }
+// close cinema
+closeCinema.addEventListener('click', ()=>{ cinemaPop.style.display='none'; cinemaPop.setAttribute('aria-hidden','true'); });
 
-  showBtn.addEventListener('click', () => {
-    animateToTarget();
-  });
+// bottom center small buttons also open panels when clicked (1 budget, 2 location, 3 area, 4 schedule)
+document.getElementById('btn1').addEventListener('click', ()=>{ revealBudget.click(); });
+document.getElementById('btn2').addEventListener('click', ()=>{ revealLocation.click(); });
+document.getElementById('btn3').addEventListener('click', ()=>{ showAreaBtns.click(); });
+document.getElementById('btn4').addEventListener('click', ()=>{ bottomReveal.style.display='block'; });
 
-  // Modal logic
-  const modalBack = document.getElementById('modalBack');
-  const confirmBtn = document.getElementById('confirmBtn');
-  const closeBtn = document.getElementById('closeBtn');
-  const successArea = document.getElementById('successArea');
+// close on ESC
+window.addEventListener('keydown', e=>{ if(e.key==='Escape'){ cinemaPop.style.display='none'; cinemaPop.setAttribute('aria-hidden','true'); } });
 
-  // open modal on check account click
-  checkBtn.addEventListener('click', () => {
-    modalBack.style.display = 'flex';
-    modalBack.setAttribute('aria-hidden','false');
-    successArea.style.display = 'none';
-    confirmBtn.style.display = 'inline-block';
-  });
-
-  // close modal
-  closeBtn.addEventListener('click', () => {
-    modalBack.style.display = 'none';
-    modalBack.setAttribute('aria-hidden','true');
-  });
-
-  // confirm -> show success
-  confirmBtn.addEventListener('click', () => {
-    // small confirm animation:
-    confirmBtn.animate([{transform:'translateY(0)'},{transform:'translateY(-6px)'},{transform:'translateY(0)'}],{duration:300,iterations:1});
-    // show success after micro delay
-    setTimeout(() => {
-      confirmBtn.style.display = 'none';
-      successArea.style.display = 'block';
-      // set amount to final target firmly
-      amountText.textContent = formatMoney(TARGET);
-      // success pulse
-      successArea.animate([{opacity:0, transform:'translateY(6px)'},{opacity:1,transform:'translateY(0)'}],{duration:420,fill:'forwards'});
-    }, 450);
-  });
-
-  // close modal when clicking outside modal content
-  modalBack.addEventListener('click', (e) => {
-    if (e.target === modalBack) {
-      modalBack.style.display = 'none';
-      modalBack.setAttribute('aria-hidden','true');
-    }
-  });
-
-  // subtle entrance animations
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.floating').forEach((el, i) => {
-      el.style.opacity = '0';
-      const delay = 120 + i * 60;
-      setTimeout(()=>{ el.style.transition = 'opacity .6s ease, transform .9s cubic-bezier(.2,.9,.2,1)'; el.style.opacity = '1'; }, delay);
-    });
-  });
+// initial fancy entrance
+window.addEventListener('load', ()=>{
+  document.querySelectorAll('.panel, .card-play, .logo').forEach((el,i)=>{ el.style.opacity=0; setTimeout(()=>{ el.style.transition='opacity .7s ease, transform .9s cubic-bezier(.2,.9,.2,1)'; el.style.opacity=1; }, 150 + i*80); });
+});
 </script>
-
 </body>
 </html>
