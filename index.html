@@ -3,77 +3,71 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>dropshipping.io — Luxury Reveal Experience</title>
+<title>DROPSHIPPING.IO | Abhinav Choudhary — Bank Account Portal</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg1:#030405; --bg2:#0b0c10;
   --gold:#d4af37; --gold2:#f7d66b;
-  --muted:rgba(255,255,255,0.75);
+  --muted:rgba(255,255,255,0.78);
   --glass:rgba(255,255,255,0.03);
   --accent:linear-gradient(90deg,var(--gold),var(--gold2));
   --success:#10b981;
+  --dropbox:#0061ff;
 }
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
-body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:radial-gradient(1000px 380px at 10% 8%, rgba(255,255,255,0.02), transparent),linear-gradient(180deg,var(--bg1),var(--bg2));color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-.container{max-width:1200px;margin:0 auto;padding:48px 28px}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:radial-gradient(900px 360px at 8% 8%, rgba(255,255,255,0.02), transparent),linear-gradient(180deg,var(--bg1),var(--bg2));color:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.container{max-width:1150px;margin:0 auto;padding:36px 20px}
 .header{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;gap:14px;align-items:center}
-.logo{width:72px;height:52px;border-radius:14px;background:linear-gradient(160deg,#0b0b0d,#151619);display:grid;place-items:center;border:1px solid rgba(255,255,255,0.04);box-shadow:0 40px 140px rgba(0,0,0,0.65) inset}
-.title{font-weight:900;font-size:18px;letter-spacing:0.6px}
-.sub{color:var(--muted);font-size:13px}
+.logo{width:72px;height:52px;border-radius:12px;background:linear-gradient(160deg,#0b0b0d,#151619);display:grid;place-items:center;border:1px solid rgba(255,255,255,0.04);box-shadow:0 40px 140px rgba(0,0,0,0.6) inset}
+.title{font-weight:900;font-size:16px;letter-spacing:0.6px}
+.subtitle{color:var(--muted);font-size:13px}
 .controls{display:flex;gap:12px;align-items:center}
-.btn{padding:12px 18px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
-.btn-primary{background:var(--accent);color:#0b0b0b;box-shadow:0 30px 120px rgba(212,169,69,0.12)}
+.btn{padding:10px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:800}
+.btn-primary{background:var(--accent);color:#0b0b0b;box-shadow:0 20px 80px rgba(212,169,69,0.12)}
 .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
 
+/* page layout */
+.grid{display:grid;grid-template-columns:1fr 420px;gap:32px;margin-top:28px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.card{padding:20px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.016),transparent);border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(8px);box-shadow:0 24px 120px rgba(0,0,0,0.6)}
+
 /* hero */
-.hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;margin-top:36px}
-@media(max-width:980px){.hero{grid-template-columns:1fr}}
-.h1{font-size:44px;font-weight:900;margin:0;line-height:0.95}
-.h-desc{color:var(--muted);margin-top:12px;max-width:720px}
+.h1{font-size:36px;font-weight:900;line-height:0.96}
+.h-desc{color:var(--muted);margin-top:10px;max-width:680px}
 
-/* glass panel */
-.panel{margin-top:18px;padding:22px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(10px);box-shadow:0 24px 120px rgba(0,0,0,0.6)}
+/* bank form */
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.input{padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:#fff;width:100%}
+.helper{font-size:13px;color:var(--muted);margin-top:8px}
 
-/* action buttons */
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-.big-btn{font-size:16px;padding:16px 22px;border-radius:14px}
-.counter{font-size:34px;font-weight:900;margin-top:14px;letter-spacing:0.6px}
+/* fancy add button */
+.add-btn{margin-top:16px;padding:14px 18px;border-radius:14px;border:none;font-weight:900;cursor:pointer;background:linear-gradient(90deg,#8cf7ff,#7cc6ff);color:#021027;box-shadow:0 30px 120px rgba(124,198,255,0.06)}
 
-/* map card */
-.map-card{margin-top:18px;padding:18px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.014),transparent);border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(8px)}
-.map-visual{height:220px;border-radius:12px;background:linear-gradient(180deg,#08121a,#061018);display:grid;place-items:center;border:1px solid rgba(255,255,255,0.02);position:relative;overflow:hidden}
-.map-pin{width:86px;height:86px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #ff6b6b,#ff2d2d);display:grid;place-items:center;box-shadow:0 30px 120px rgba(255,40,40,0.12);transform:translateY(20px);opacity:0}
+/* modal / popup */
+.modal-back{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.7));z-index:9999}
+.modal{width:520px;max-width:92%;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:20px;border-radius:14px;border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(14px);box-shadow:0 60px 200px rgba(0,0,0,0.7);text-align:center}
+.tick{width:72px;height:72px;border-radius:18px;display:grid;place-items:center;margin:0 auto;background:linear-gradient(90deg,#e6fff0,#d1fbe6);box-shadow:0 20px 80px rgba(16,185,129,0.12);transform:scale(.6);opacity:0}
+.tick svg{filter:drop-shadow(0 10px 30px rgba(16,185,129,0.18))}
+.modal h3{margin-top:12px;font-size:20px}
+.modal p{color:var(--muted);margin-top:8px}
 
-/* points list */
-.points{margin-top:12px}
-.points li{margin:8px 0;color:var(--muted)}
+/* bottom fixed */
+.bottom-fixed{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);display:flex;gap:12px;z-index:999}
+.bottom-fixed .small-btn{padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);cursor:pointer;font-weight:700}
 
-/* area buttons */
-.area-grid{display:flex;gap:10px;margin-top:14px}
-.area-btn{padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);cursor:pointer;font-weight:700}
+/* premium micro interactions */
+.shine{position:relative;overflow:hidden;border-radius:12px}
+.shine::after{content:'';position:absolute;left:-140%;top:-40%;width:40%;height:220%;background:linear-gradient(120deg,rgba(255,255,255,0),rgba(255,255,255,0.3),rgba(255,255,255,0));transform:rotate(24deg);animation:shineAnim 3s linear infinite;mix-blend-mode:overlay}
+@keyframes shineAnim{to{left:140%}}
 
-/* bottom center 4 buttons */
-.bottom-center{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);display:flex;gap:12px;z-index:999}
-.bottom-center .bbtn{padding:12px 14px;border-radius:12px;background:linear-gradient(90deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.04);cursor:pointer;font-weight:800}
+/* dropbox badge */
+.dropbox-badge{display:flex;gap:10px;align-items:center;font-weight:800;color:var(--muted)}
 
-/* reveal panels */
-.reveal{margin-top:18px;display:none;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(8px)}
-
-/* premium animation helpers */
-.shine-line{height:6px;border-radius:8px;background:linear-gradient(90deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02));overflow:hidden}
-.shine-line > i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width 1.2s cubic-bezier(.2,.9,.2,1)}
-
-/* cinematic popup */
-.cinema-pop{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.6));z-index:10000}
-.cinema-card{width:760px;max-width:90%;padding:28px;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(14px);box-shadow:0 80px 280px rgba(0,0,0,0.8);text-align:center}
-.cinema-title{font-size:32px;font-weight:900;margin:0}
-.cinema-sub{color:var(--muted);margin-top:8px}
-
-/* small */
-.small{font-size:13px;color:var(--muted);margin-top:8px}
+/* small screen tweaks */
+@media(max-width:520px){ .form-row{grid-template-columns:1fr} .h1{font-size:28px} }
 </style>
 </head>
 <body>
@@ -81,263 +75,184 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
   <header class="header">
     <div class="brand">
       <div class="logo" aria-hidden>
-        <svg width="48" height="34" viewBox="0 0 24 24" fill="none"><rect x="1.5" y="3" width="21" height="14" rx="3" fill="#fff" opacity="0.06"/><path d="M10 8L16 11L10 14V8Z" fill="#fff"/></svg>
+        <!-- Dropbox-like minimalist logo (premium vector) -->
+        <svg width="44" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.2l3.6 2.5-3.6 2.6-3.6-2.6L12 2.2z" fill="#58a6ff"/>
+          <path d="M12 11l3.6-2.5 3.6 2.5-3.6 2.6L12 11z" fill="#0061ff"/>
+          <path d="M12 11l-3.6-2.5-3.6 2.5L8.4 13.6 12 11z" fill="#1e90ff"/>
+          <path d="M12 20.8l-3.6-2.5 3.6-2.6 3.6 2.6L12 20.8z" fill="#88bfff"/>
+        </svg>
       </div>
       <div>
-        <div class="title">dropshipping.io</div>
-        <div class="sub">Luxury reveal experience — premium animations</div>
+        <div class="title">DROPSHIPPING.IO &nbsp; | &nbsp; <span style="font-weight:700">Abhinav Choudhary</span></div>
+        <div class="subtitle">Bank Connect — Premium Portal</div>
       </div>
     </div>
     <div class="controls">
-      <button class="btn btn-ghost">Sign In</button>
-      <button class="btn btn-primary">Contact</button>
+      <div class="dropbox-badge shine" title="Dropbox integration">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2.2l3.6 2.5-3.6 2.6-3.6-2.6L12 2.2z" fill="#58a6ff"/><path d="M12 11l3.6-2.5 3.6 2.5-3.6 2.6L12 11z" fill="#0061ff"/><path d="M12 11l-3.6-2.5-3.6 2.5L8.4 13.6 12 11z" fill="#1e90ff"/><path d="M12 20.8l-3.6-2.5 3.6-2.6 3.6 2.6L12 20.8z" fill="#88bfff"/></svg>
+        <div style="font-size:13px;color:var(--muted)">Dropbox</div>
+      </div>
+      <button class="btn btn-ghost">Help</button>
     </div>
   </header>
 
-  <div class="hero">
-    <section>
-      <h1 class="h1">dropshipping.io — Luxury Reveal</h1>
-      <p class="h-desc">Experience a cinematic, Apple/Nike/Tesla-style luxury page. Use the controls to reveal the <strong>budget</strong>, <strong>location</strong>, <strong>area</strong>, and timeline for your house launch.</p>
+  <div class="grid">
+    <main class="card">
+      <div class="h1">Connect Bank Account</div>
+      <div class="h-desc">Add your bank account securely — this demo shows a premium animated flow. Click "Add Account" to open the animated form.</div>
 
-      <div class="panel">
-        <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap">
-          <div>
-            <div style="font-weight:800">Interactive Reveals</div>
-            <div class="small">High-end animations with premium motion design.</div>
+      <div style="margin-top:18px">
+        <div class="helper">Stored accounts</div>
+        <div style="display:flex;gap:10px;margin-top:12px">
+          <div style="padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.04);min-width:220px">
+            <div style="font-weight:800">No accounts linked</div>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Add a bank to receive payouts</div>
           </div>
-          <div style="display:flex;gap:10px">
-            <button id="revealBudget" class="btn btn-primary big-btn">Budget Reveal</button>
-            <button id="revealLocation" class="btn btn-ghost big-btn">Reveal Location</button>
-            <button id="showAreaBtns" class="btn btn-ghost big-btn">Show Area Options</button>
-          </div>
+          <div style="flex:1"></div>
+          <button id="openAdd" class="add-btn">Add Account</button>
         </div>
-
-        <div id="budgetPanel" class="reveal">
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-            <div>
-              <div style="color:var(--muted)">Total Budget</div>
-              <div id="budgetCounter" class="counter">$0</div>
-              <div class="small">Budget revealed with cinematic count-up animation.</div>
-            </div>
-            <div style="width:40%;min-width:220px">
-              <div class="shine-line"><i id="budgetShine"></i></div>
-            </div>
-          </div>
-        </div>
-
-        <div id="locationPanel" class="reveal">
-          <div class="map-card">
-            <div class="map-visual">
-              <div id="mapPin" class="map-pin" aria-hidden>
-                <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#fff"/><circle cx="12" cy="9" r="2.5" fill="#ff2d2d"/></svg>
-              </div>
-            </div>
-            <ul class="points">
-              <li>📍 <strong>1.5 km away</strong></li>
-              <li>🏫 <strong>Easy access to international school</strong></li>
-              <li>🛣️ <strong>Near Ajmer Road highway</strong></li>
-            </ul>
-          </div>
-        </div>
-
-        <div id="areaPanel" class="reveal">
-          <div style="font-weight:800">Choose Area Detail</div>
-          <div class="area-grid">
-            <button class="area-btn" data-area="2500">Option 1</button>
-            <button class="area-btn" data-area="2500">Option 2</button>
-            <button class="area-btn" data-area="2500">Option 3</button>
-          </div>
-          <div id="areaShow" class="small" style="margin-top:12px"></div>
-        </div>
-
-        <div id="bottomReveal" class="reveal">
-          <div style="display:flex;flex-direction:column;gap:10px;align-items:center">
-            <div style="font-weight:800">Schedule & Design</div>
-            <div class="small">Click the four buttons below to reveal production details.</div>
-            <div style="display:flex;gap:10px;margin-top:12px">
-              <button class="bbtn btn-primary" data-info="start">Reveal 1</button>
-              <button class="bbtn btn-primary" data-info="design">Reveal 2</button>
-              <button class="bbtn btn-primary" data-info="date">Reveal 3</button>
-              <button class="bbtn btn-primary" data-info="final">Reveal 4</button>
-            </div>
-            <div id="bottomInfo" class="small" style="margin-top:12px"></div>
-          </div>
-        </div>
-
       </div>
 
-    </section>
+      <div style="margin-top:22px" class="helper">Recent activity</div>
+      <div style="margin-top:8px;color:var(--muted);font-size:13px">— No recent bank activities (demo view)</div>
+    </main>
 
-    <aside>
-      <div class="panel">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-          <div style="font-weight:900">Showcase</div>
-          <div style="color:var(--muted);font-size:13px">Exclusive preview</div>
+    <aside class="card">
+      <div style="font-weight:900">Security & Design</div>
+      <div style="color:var(--muted);margin-top:8px">Premium-grade encryption visuals, glassmorphism UI and cinematic micro-interactions.</div>
+
+      <div style="margin-top:18px">
+        <div style="font-weight:800">Connected services</div>
+        <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+          <div style="width:40px;height:40px;border-radius:8px;background:linear-gradient(90deg,#58a6ff,#0061ff);display:grid;place-items:center">DB</div>
+          <div style="font-weight:700">Dropbox</div>
         </div>
-        <div style="height:260px;border-radius:12px;background:linear-gradient(180deg,#07121a,#051018);display:grid;place-items:center;position:relative;overflow:hidden">
-          <div style="font-weight:900;font-size:20px">Premium Visual</div>
-          <div style="position:absolute;left:18px;bottom:18px;color:var(--muted);font-size:13px">2500 sq meters — Luxury Finish</div>
-        </div>
-        <div class="small" style="margin-top:12px">Motion: fast count-up, map pin pop, confetti, cinematic panels and premium text reveals.</div>
       </div>
     </aside>
   </div>
 </div>
 
-<div class="bottom-center" id="bottomCenter">
-  <button class="bbtn" id="btn1">1</button>
-  <button class="bbtn" id="btn2">2</button>
-  <button class="bbtn" id="btn3">3</button>
-  <button class="bbtn" id="btn4">4</button>
-</div>
+<!-- Add Account Modal -->
+<div class="modal-back" id="modalBack" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div style="display:flex;gap:12px;align-items:center;justify-content:center">
+      <div style="font-weight:900;font-size:18px" id="modalTitle">Add Bank Account</div>
+    </div>
 
-<!-- cinematic popup -->
-<div class="cinema-pop" id="cinemaPop" aria-hidden="true">
-  <div class="cinema-card" role="dialog" aria-modal="true">
-    <div class="cinema-title" id="cinemaTitle">Cinematic Reveal</div>
-    <div class="cinema-sub" id="cinemaSub">Details appear here</div>
-    <div style="margin-top:20px">
-      <button id="closeCinema" class="btn btn-ghost">Close</button>
+    <div style="margin-top:12px" class="form-row">
+      <input id="accName" class="input" placeholder="Account holder name (e.g. Sher Singh Choudhary)">
+      <input id="accNumber" class="input" placeholder="Account number">
+    </div>
+    <div style="margin-top:12px" class="form-row">
+      <input id="ifsc" class="input" placeholder="IFSC / Routing">
+      <input id="bankName" class="input" placeholder="Bank name">
+    </div>
+    <div style="margin-top:12px" class="helper">All fields demo-only. No data is transmitted.</div>
+
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:18px">
+      <button id="submitAcc" class="btn btn-primary">Add Account</button>
+      <button id="cancelAcc" class="btn btn-ghost">Cancel</button>
     </div>
   </div>
 </div>
 
+<!-- Success popup -->
+<div class="modal-back" id="successBack" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" style="text-align:center">
+    <div class="tick" id="tick">
+      <!-- green tick icon -->
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h3 id="successTitle">Your bank account has been added</h3>
+    <p id="successText">Name: <strong id="successName">Sher Singh Choudhary</strong></p>
+    <div style="margin-top:18px">
+      <button id="closeSuccess" class="btn btn-primary">Done</button>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-fixed">
+  <button class="small-btn" id="demoBtn">Demo Add</button>
+  <button class="small-btn" id="helpBtn">Help</button>
+</div>
+
 <script>
-// Helpers
-function formatMoney(n){ return n.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}); }
-function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
-
 // Elements
-const revealBudget = document.getElementById('revealBudget');
-const budgetPanel = document.getElementById('budgetPanel');
-const budgetCounter = document.getElementById('budgetCounter');
-const budgetShine = document.getElementById('budgetShine');
+const openAdd = document.getElementById('openAdd');
+const modalBack = document.getElementById('modalBack');
+const cancelAcc = document.getElementById('cancelAcc');
+const submitAcc = document.getElementById('submitAcc');
+const successBack = document.getElementById('successBack');
+const tick = document.getElementById('tick');
+const successName = document.getElementById('successName');
+const closeSuccess = document.getElementById('closeSuccess');
+const accName = document.getElementById('accName');
+const accNumber = document.getElementById('accNumber');
+const ifsc = document.getElementById('ifsc');
+const bankName = document.getElementById('bankName');
+const demoBtn = document.getElementById('demoBtn');
+const helpBtn = document.getElementById('helpBtn');
 
-const revealLocation = document.getElementById('revealLocation');
-const locationPanel = document.getElementById('locationPanel');
-const mapPin = document.getElementById('mapPin');
-
-const showAreaBtns = document.getElementById('showAreaBtns');
-const areaPanel = document.getElementById('areaPanel');
-const areaShow = document.getElementById('areaShow');
-const areaBtns = document.querySelectorAll('.area-btn');
-
-const bottomReveal = document.getElementById('bottomReveal');
-const bottomInfo = document.getElementById('bottomInfo');
-const bottomBtns = document.querySelectorAll('.bbtn');
-
-const cinemaPop = document.getElementById('cinemaPop');
-const cinemaTitle = document.getElementById('cinemaTitle');
-const cinemaSub = document.getElementById('cinemaSub');
-const closeCinema = document.getElementById('closeCinema');
-
-// Budget reveal animation to $4,000,000
-const TARGET = 4000000;
-revealBudget.addEventListener('click', ()=>{
-  // show panel
-  budgetPanel.style.display = 'block';
-  // animate shine
-  budgetShine.style.width = '0%';
-  setTimeout(()=> budgetShine.style.width = '100%', 50);
-  // counting animation
-  let animating = true;
-  const DURATION = 1800;
-  const start = performance.now();
-  function step(now){
-    const elapsed = now - start;
-    const progress = Math.min(elapsed / DURATION, 1);
-    const value = Math.floor(easeOutCubic(progress) * TARGET);
-    budgetCounter.textContent = formatMoney(value);
-    if(progress < 1) requestAnimationFrame(step);
-    else { budgetCounter.textContent = formatMoney(TARGET); animating=false; flashBudget(); }
-  }
-  requestAnimationFrame(step);
+// open modal
+openAdd.addEventListener('click', ()=>{
+  modalBack.style.display='flex';
+  modalBack.setAttribute('aria-hidden','false');
+  // entrance animation
+  document.querySelector('.modal').animate([{transform:'translateY(20px) scale(.98)',opacity:0},{transform:'translateY(0) scale(1)',opacity:1}],{duration:700,easing:'cubic-bezier(.2,.9,.2,1)'});
 });
 
-function flashBudget(){
-  budgetCounter.animate([{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}],{duration:700});
+// cancel
+cancelAcc.addEventListener('click', ()=>{ modalBack.style.display='none'; modalBack.setAttribute('aria-hidden','true'); });
+
+// submit (simulate adding account)
+submitAcc.addEventListener('click', ()=>{
+  const nameVal = accName.value.trim() || 'Sher Singh Choudhary';
+  // close add modal
+  modalBack.style.display='none'; modalBack.setAttribute('aria-hidden','true');
+  // set success name to required value (Sher Singh Choudhary)
+  successName.textContent = nameVal;
+  // show success popup
+  successBack.style.display='flex'; successBack.setAttribute('aria-hidden','false');
+  // animate tick and modal
+  const modalEl = successBack.querySelector('.modal');
+  modalEl.animate([{transform:'translateY(20px) scale(.98)',opacity:0},{transform:'translateY(0) scale(1)',opacity:1}],{duration:700,easing:'cubic-bezier(.2,.9,.2,1)'});
+  tick.animate([{transform:'scale(.6)',opacity:0},{transform:'scale(1.06)',opacity:1},{transform:'scale(1)',opacity:1}],{duration:900,easing:'cubic-bezier(.2,.9,.2,1)'});
+  // tiny confetti of green dots
+  fireGreenConfetti();
+});
+
+// close success
+closeSuccess.addEventListener('click', ()=>{ successBack.style.display='none'; successBack.setAttribute('aria-hidden','true'); });
+
+// demo and help
+demoBtn.addEventListener('click', ()=>{
+  // prefill and submit
+  accName.value = 'Sher Singh Choudhary';
+  accNumber.value = '1234567890';
+  ifsc.value = 'SBIN0000001';
+  bankName.value = 'Premium Bank';
+  openAdd.click();
+  setTimeout(()=> submitAcc.click(), 900);
+});
+helpBtn.addEventListener('click', ()=> alert('This demo securely simulates adding a bank account (no data leaves your browser).'));
+
+// green confetti
+function fireGreenConfetti(){
+  const c = document.createElement('div'); c.style.position='absolute'; c.style.inset='0'; c.style.pointerEvents='none'; successBack.querySelector('.modal').appendChild(c);
+  const colors = ['#10b981','#34d399','#059669'];
+  for(let i=0;i<22;i++){
+    const p = document.createElement('div'); p.style.position='absolute'; p.style.left = (40+Math.random()*40) + '%'; p.style.top = (20+Math.random()*40) + '%'; p.style.width = (6+Math.random()*12)+'px'; p.style.height = (10+Math.random()*16)+'px'; p.style.background = colors[Math.floor(Math.random()*colors.length)]; p.style.borderRadius='6px'; p.style.opacity='1'; c.appendChild(p);
+    const anim = p.animate([{transform:'translateY(0) rotate(0deg)',opacity:1},{transform:'translateY(-120px) rotate('+ (360+Math.random()*720) +'deg)',opacity:0}],{duration:900+Math.random()*600,delay:Math.random()*200});
+    anim.onfinish = ()=> p.remove();
+  }
+  setTimeout(()=> c.remove(), 2200);
 }
 
-// Location reveal with luxe animation
-revealLocation.addEventListener('click', ()=>{
-  locationPanel.style.display = 'block';
-  // pop pin animation
-  mapPin.style.opacity = 0;
-  mapPin.style.transform = 'translateY(30px) scale(.6)';
-  setTimeout(()=>{
-    mapPin.style.transition = 'transform .9s cubic-bezier(.2,.9,.2,1), opacity .7s';
-    mapPin.style.opacity = 1;
-    mapPin.style.transform = 'translateY(0) scale(1)';
-    // small ripple pulse
-    const pulse = document.createElement('div');
-    pulse.style.position='absolute'; pulse.style.width='180px'; pulse.style.height='180px'; pulse.style.borderRadius='50%'; pulse.style.left='calc(50% - 90px)'; pulse.style.top='calc(50% - 90px)'; pulse.style.boxShadow='0 0 120px 20px rgba(255,45,45,0.08)'; pulse.style.opacity='0.9'; pulse.style.zIndex='2';
-    document.querySelector('.map-visual').appendChild(pulse);
-    pulse.animate([{opacity:0.9, transform:'scale(.6)'},{opacity:0, transform:'scale(1.8)'}],{duration:900}).onfinish=()=> pulse.remove();
-  },80);
-});
-
-// Show area options and area reveals
-showAreaBtns.addEventListener('click', ()=>{
-  areaPanel.style.display='block';
-  areaShow.textContent='';
-});
-areaBtns.forEach(btn=> btn.addEventListener('click', (e)=>{
-  const area = e.currentTarget.dataset.area;
-  // premium reveal animation
-  areaShow.textContent = '';
-  // create cinematic number reveal
-  const el = document.createElement('div'); el.style.fontWeight='900'; el.style.fontSize='22px'; el.style.letterSpacing='0.6px'; el.textContent='0 sq m'; areaShow.appendChild(el);
-  // animate to area (2500)
-  const TARGET_AREA = parseInt(area,10) || 2500;
-  const DURATION = 900;
-  const start = performance.now();
-  function s(now){ const p = Math.min((now-start)/DURATION,1); const v = Math.floor(easeOutCubic(p) * TARGET_AREA); el.textContent = v.toLocaleString() + ' sq meter'; if(p<1) requestAnimationFrame(s); else { el.textContent = TARGET_AREA.toLocaleString() + ' sq meter'; el.animate([{transform:'scale(1)'},{transform:'scale(1.04)'},{transform:'scale(1)'}],{duration:600}); } }
-  requestAnimationFrame(s);
-}));
-
-// Bottom center 4 buttons reveal schedule info
-bottomBtns.forEach(b=> b.addEventListener('click', (e)=>{
-  const key = e.currentTarget.dataset.info;
-  bottomReveal.style.display='block';
-  bottomInfo.textContent='';
-  // luxury transitions depending on key
-  if(key==='start'){
-    showCinema('House Construction Start','Your house starting on 2 December — premium modern process begins.');
-  } else if(key==='design'){
-    showCinema('Design Timeline','Design by yourself — final design deadline: 15 November.');
-  } else if(key==='date'){
-    showCinema('Key Dates','2 December: Groundwork begins. 15 November: Final designs due.');
-  } else if(key==='final'){
-    showCinema('Final Note','Premium modern execution — full cinematic delivery schedule shown.');
-  }
-}));
-
-function showCinema(title, sub){
-  cinemaTitle.textContent = title;
-  cinemaSub.textContent = sub;
-  cinemaPop.style.display='flex';
-  cinemaPop.setAttribute('aria-hidden','false');
-  // hero cinematic animation
-  const card = document.querySelector('.cinema-card');
-  card.animate([{transform:'translateY(20px) scale(.98)', opacity:0},{transform:'translateY(-8px) scale(1.02)', opacity:1},{transform:'translateY(0) scale(1)', opacity:1}],{duration:900,easing:'cubic-bezier(.2,.9,.2,1)'});
-}
-
-// close cinema
-closeCinema.addEventListener('click', ()=>{ cinemaPop.style.display='none'; cinemaPop.setAttribute('aria-hidden','true'); });
-
-// bottom center small buttons also open panels when clicked (1 budget, 2 location, 3 area, 4 schedule)
-document.getElementById('btn1').addEventListener('click', ()=>{ revealBudget.click(); });
-document.getElementById('btn2').addEventListener('click', ()=>{ revealLocation.click(); });
-document.getElementById('btn3').addEventListener('click', ()=>{ showAreaBtns.click(); });
-document.getElementById('btn4').addEventListener('click', ()=>{ bottomReveal.style.display='block'; });
-
-// close on ESC
-window.addEventListener('keydown', e=>{ if(e.key==='Escape'){ cinemaPop.style.display='none'; cinemaPop.setAttribute('aria-hidden','true'); } });
-
-// initial fancy entrance
-window.addEventListener('load', ()=>{
-  document.querySelectorAll('.panel, .card-play, .logo').forEach((el,i)=>{ el.style.opacity=0; setTimeout(()=>{ el.style.transition='opacity .7s ease, transform .9s cubic-bezier(.2,.9,.2,1)'; el.style.opacity=1; }, 150 + i*80); });
-});
+// close modals on ESC or click outside
+window.addEventListener('keydown', e=>{ if(e.key==='Escape'){ modalBack.style.display='none'; successBack.style.display='none'; modalBack.setAttribute('aria-hidden','true'); successBack.setAttribute('aria-hidden','true'); } });
+modalBack.addEventListener('click', (e)=>{ if(e.target === modalBack) { modalBack.style.display='none'; modalBack.setAttribute('aria-hidden','true'); } });
+successBack.addEventListener('click', (e)=>{ if(e.target === successBack) { successBack.style.display='none'; successBack.setAttribute('aria-hidden','true'); } });
 </script>
 </body>
 </html>
