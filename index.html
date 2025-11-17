@@ -3,256 +3,279 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>DROPSHIPPING.IO | Abhinav Choudhary — Bank Account Portal</title>
+<title>PlayButton Award Claim — Ultra ABHINAV CHOUDHARY </title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg1:#030405; --bg2:#0b0c10;
-  --gold:#d4af37; --gold2:#f7d66b;
-  --muted:rgba(255,255,255,0.78);
-  --glass:rgba(255,255,255,0.03);
-  --accent:linear-gradient(90deg,var(--gold),var(--gold2));
+  --bgA:#020203; --bgB:#0d0e12;
+  --gold:#d4af37; --gold-2:#f7d66b;
+  --glass:rgba(255,255,255,0.03); --glass-border:rgba(255,255,255,0.06);
+  --muted:rgba(255,255,255,0.72);
+  --accent:linear-gradient(90deg,var(--gold),var(--gold-2));
   --success:#10b981;
-  --dropbox:#0061ff;
 }
-*{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box}
 html,body{height:100%}
-body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:radial-gradient(900px 360px at 8% 8%, rgba(255,255,255,0.02), transparent),linear-gradient(180deg,var(--bg1),var(--bg2));color:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.container{max-width:1150px;margin:0 auto;padding:36px 20px}
-.header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:radial-gradient(1000px 380px at 8% 8%, rgba(255,255,255,0.02), transparent),linear-gradient(180deg,var(--bgA),var(--bgB));color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:1250px;margin:0 auto;padding:44px 28px}
+.header{display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;gap:14px;align-items:center}
-.logo{width:72px;height:52px;border-radius:12px;background:linear-gradient(160deg,#0b0b0d,#151619);display:grid;place-items:center;border:1px solid rgba(255,255,255,0.04);box-shadow:0 40px 140px rgba(0,0,0,0.6) inset}
-.title{font-weight:900;font-size:16px;letter-spacing:0.6px}
-.subtitle{color:var(--muted);font-size:13px}
-.controls{display:flex;gap:12px;align-items:center}
-.btn{padding:10px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:800}
-.btn-primary{background:var(--accent);color:#0b0b0b;box-shadow:0 20px 80px rgba(212,169,69,0.12)}
-.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-
-/* page layout */
-.grid{display:grid;grid-template-columns:1fr 420px;gap:32px;margin-top:28px;align-items:start}
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
-.card{padding:20px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.016),transparent);border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(8px);box-shadow:0 24px 120px rgba(0,0,0,0.6)}
-
-/* hero */
-.h1{font-size:36px;font-weight:900;line-height:0.96}
-.h-desc{color:var(--muted);margin-top:10px;max-width:680px}
-
-/* bank form */
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-.input{padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:#fff;width:100%}
-.helper{font-size:13px;color:var(--muted);margin-top:8px}
-
-/* fancy add button */
-.add-btn{margin-top:16px;padding:14px 18px;border-radius:14px;border:none;font-weight:900;cursor:pointer;background:linear-gradient(90deg,#8cf7ff,#7cc6ff);color:#021027;box-shadow:0 30px 120px rgba(124,198,255,0.06)}
-
-/* modal / popup */
-.modal-back{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.7));z-index:9999}
-.modal{width:520px;max-width:92%;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:20px;border-radius:14px;border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(14px);box-shadow:0 60px 200px rgba(0,0,0,0.7);text-align:center}
-.tick{width:72px;height:72px;border-radius:18px;display:grid;place-items:center;margin:0 auto;background:linear-gradient(90deg,#e6fff0,#d1fbe6);box-shadow:0 20px 80px rgba(16,185,129,0.12);transform:scale(.6);opacity:0}
-.tick svg{filter:drop-shadow(0 10px 30px rgba(16,185,129,0.18))}
-.modal h3{margin-top:12px;font-size:20px}
-.modal p{color:var(--muted);margin-top:8px}
-
-/* bottom fixed */
-.bottom-fixed{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);display:flex;gap:12px;z-index:999}
-.bottom-fixed .small-btn{padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);cursor:pointer;font-weight:700}
-
-/* premium micro interactions */
-.shine{position:relative;overflow:hidden;border-radius:12px}
-.shine::after{content:'';position:absolute;left:-140%;top:-40%;width:40%;height:220%;background:linear-gradient(120deg,rgba(255,255,255,0),rgba(255,255,255,0.3),rgba(255,255,255,0));transform:rotate(24deg);animation:shineAnim 3s linear infinite;mix-blend-mode:overlay}
-@keyframes shineAnim{to{left:140%}}
-
-/* dropbox badge */
-.dropbox-badge{display:flex;gap:10px;align-items:center;font-weight:800;color:var(--muted)}
-
-/* small screen tweaks */
-@media(max-width:520px){ .form-row{grid-template-columns:1fr} .h1{font-size:28px} }
+.logo{width:70px;height:50px;border-radius:14px;background:linear-gradient(160deg,#0b0b0d,#151619);display:grid;place-items:center;border:1px solid rgba(255,255,255,0.03);box-shadow:0 40px 140px rgba(0,0,0,0.65) inset}
+.title-compact{font-weight:900;letter-spacing:0.6px}
+.controls-top{display:flex;gap:12px;align-items:center}
+.btn{padding:12px 18px;border-radius:14px;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(90deg,var(--gold),var(--gold-2));color:#111;font-weight:800;box-shadow:0 30px 120px rgba(212,169,69,0.12)}
+.btn-ghost{background:transparent;border:1px solid var(--glass-border);color:var(--muted)}
+.grid-main{display:grid;grid-template-columns:1fr 480px;gap:36px;margin-top:28px}
+@media(max-width:980px){.grid-main{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.018),transparent);padding:24px;border-radius:18px;border:1px solid var(--glass-border);backdrop-filter:blur(10px);box-shadow:0 20px 80px rgba(0,0,0,0.55)}
+.h1{font-size:48px;font-weight:900;margin:0}
+.h-desc{color:var(--muted);max-width:760px;margin-top:12px}
+.input{padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:#fff;width:100%}
+.row{display:flex;gap:12px;align-items:center}
+.kv{margin-top:10px;font-weight:700;font-size:15px}
+.play-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+@media(max-width:900px){.play-grid{grid-template-columns:repeat(2,1fr)}}
+.card-play{padding:16px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.04);display:flex;gap:14px;align-items:center;position:relative;overflow:hidden}
+.card-play::after{content:'';position:absolute;left:-160%;top:-50%;width:48%;height:240%;background:linear-gradient(120deg,rgba(255,255,255,0),rgba(255,255,255,0.32),rgba(255,255,255,0));transform:rotate(26deg);animation:shineSweep 2.8s linear infinite;mix-blend-mode:overlay}
+@keyframes shineSweep{to{left:160%}}
+.play-wrap{width:110px;height:80px;border-radius:16px;display:grid;place-items:center;position:relative;box-shadow:0 40px 140px rgba(0,0,0,0.6)}
+.gold{background:linear-gradient(180deg,#fff8ec,#f7e1a8);color:#111;box-shadow:0 26px 110px rgba(213,169,69,0.14)}
+.silver{background:linear-gradient(180deg,#f6f8fb,#e0e6ee);color:#1f2937;box-shadow:0 18px 64px rgba(140,150,170,0.1)}
+.diamond{background:linear-gradient(180deg,#ffffff,#e9f1ff);color:#0b1b2b;box-shadow:0 32px 160px rgba(140,170,255,0.14)}
+.floaty{animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{0%{transform:translateY(0) translateZ(0)}50%{transform:translateY(-14px) translateZ(0)}100%{transform:translateY(0) translateZ(0)}}
+/* 3D parallax layers */
+.parallax-scene{position:relative;perspective:1200px}
+.layer{position:relative;transform-style:preserve-3d}
+.layer .card-play{transform:translateZ(0)}
+/* tracker */
+.tracker{margin-top:20px;padding:18px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(8px)}
+.steps{display:flex;gap:12px;align-items:center}
+.step{flex:1;padding:14px;border-radius:12px;background:rgba(255,255,255,0.01);text-align:center;position:relative;transition:all .5s cubic-bezier(.2,.9,.2,1)}
+.step.active{transform:translateY(-12px);box-shadow:0 36px 140px rgba(0,0,0,0.6);background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))}
+.connector{height:8px;background:rgba(255,255,255,0.03);border-radius:12px;margin-top:14px;overflow:hidden}
+.connector > i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold-2));transition:width 1s cubic-bezier(.2,.9,.2,1)}
+/* huge lens flare */
+.lens{position:absolute;left:50%;top:20%;width:900px;height:900px;transform:translate(-50%,-10%);background:radial-gradient(circle at 30% 30%, rgba(255,235,180,0.07), transparent 10%, transparent 40%), radial-gradient(circle at 70% 70%, rgba(180,210,255,0.02), transparent 15%);filter:blur(60px);pointer-events:none}
+/* youtube pop */
+.youtube-pop{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:9999}
+.pop-card{width:560px;height:300px;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(14px);display:grid;place-items:center;position:relative;box-shadow:0 80px 240px rgba(0,0,0,0.75)}
+.ylogo-large{width:160px;height:110px;border-radius:18px;background:linear-gradient(90deg,#fff7f7,#ffefef);display:grid;place-items:center;transform:translateY(60px) scale(0.6);opacity:0}
+.confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.particle{position:absolute;width:12px;height:22px;border-radius:6px;opacity:0}
+.congrats-banner{position:fixed;left:50%;top:12%;transform:translateX(-50%) translateY(-10px);padding:18px 28px;border-radius:16px;background:linear-gradient(90deg,var(--gold),var(--gold-2));color:#111;font-weight:900;box-shadow:0 40px 160px rgba(212,169,69,0.18);opacity:0;z-index:10000}
+.congrats-banner.show{opacity:1;animation:bannerPop 1s cubic-bezier(.2,.9,.2,1)}
+@keyframes bannerPop{0%{transform:translateX(-50%) translateY(-18px) scale(.95);opacity:0}60%{transform:translateX(-50%) translateY(0) scale(1.08);opacity:1}100%{transform:translateX(-50%) translateY(0) scale(1)} }
+/* shimmer text */
+.shimmer{text-transform:uppercase;font-weight:900;background:linear-gradient(90deg,#fff 0%,#fff0 20%,#fff 40%);-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmerMove 3s linear infinite}
+@keyframes shimmerMove{0%{background-position:-200px 0}100%{background-position:200px 0}}
+/* subtle hover micro interactions */
+.card-play:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 60px 180px rgba(0,0,0,0.7)}
 </style>
 </head>
 <body>
+<div class="lens" aria-hidden></div>
 <div class="container">
   <header class="header">
     <div class="brand">
       <div class="logo" aria-hidden>
-        <!-- Dropbox-like minimalist logo (premium vector) -->
-        <svg width="44" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2.2l3.6 2.5-3.6 2.6-3.6-2.6L12 2.2z" fill="#58a6ff"/>
-          <path d="M12 11l3.6-2.5 3.6 2.5-3.6 2.6L12 11z" fill="#0061ff"/>
-          <path d="M12 11l-3.6-2.5-3.6 2.5L8.4 13.6 12 11z" fill="#1e90ff"/>
-          <path d="M12 20.8l-3.6-2.5 3.6-2.6 3.6 2.6L12 20.8z" fill="#88bfff"/>
-        </svg>
+        <svg width="44" height="30" viewBox="0 0 24 24" fill="none"><rect x="1.5" y="3" width="21" height="14" rx="3" fill="#fff" opacity="0.06"/><path d="M10 8L16 11L10 14V8Z" fill="#fff"/></svg>
       </div>
       <div>
-        <div class="title">DROPSHIPPING.IO &nbsp; | &nbsp; <span style="font-weight:700">Abhinav Choudhary</span></div>
-        <div class="subtitle">Bank Connect — Premium Portal</div>
+        <div class="title-compact">PLAYBUTTON AWARD CLAIM</div>
+        <div style="color:var(--muted);font-size:13px">Official • Verified • Ultra-Premium</div>
       </div>
     </div>
-    <div class="controls">
-      <div class="dropbox-badge shine" title="Dropbox integration">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2.2l3.6 2.5-3.6 2.6-3.6-2.6L12 2.2z" fill="#58a6ff"/><path d="M12 11l3.6-2.5 3.6 2.5-3.6 2.6L12 11z" fill="#0061ff"/><path d="M12 11l-3.6-2.5-3.6 2.5L8.4 13.6 12 11z" fill="#1e90ff"/><path d="M12 20.8l-3.6-2.5 3.6-2.6 3.6 2.6L12 20.8z" fill="#88bfff"/></svg>
-        <div style="font-size:13px;color:var(--muted)">Dropbox</div>
-      </div>
-      <button class="btn btn-ghost">Help</button>
+    <div class="controls-top">
+      <button class="btn btn-ghost" id="demoBtn">Demo</button>
+      <button class="btn btn-primary" id="helpBtn">Help</button>
     </div>
   </header>
 
-  <div class="grid">
-    <main class="card">
-      <div class="h1">Connect Bank Account</div>
-      <div class="h-desc">Add your bank account securely — this demo shows a premium animated flow. Click "Add Account" to open the animated form.</div>
+  <div class="grid-main">
+    <section>
+      <h1 class="h1">Claim Your PlayButton Award</h1>
+      <p class="h-desc">A God-level, cinematic claim portal — enter your official claim code, choose awards to claim (one or all three), submit your claim and enjoy an epic celebration with a YouTube logo pop, confetti, and a premium progress tracker.</p>
 
-      <div style="margin-top:18px">
-        <div class="helper">Stored accounts</div>
-        <div style="display:flex;gap:10px;margin-top:12px">
-          <div style="padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.04);min-width:220px">
-            <div style="font-weight:800">No accounts linked</div>
-            <div style="color:var(--muted);font-size:13px;margin-top:6px">Add a bank to receive payouts</div>
-          </div>
-          <div style="flex:1"></div>
-          <button id="openAdd" class="add-btn">Add Account</button>
+      <div class="card" style="margin-top:22px">
+        <div class="row">
+          <input id="claimCode" class="input" placeholder="Enter claim code e.g. GOLD-7F4A or SILV-AB12 or DIAM-0001">
+          <button class="btn btn-primary" id="verifyBtn">Verify</button>
+          <button class="btn btn-ghost" id="clearBtn">Clear</button>
         </div>
+        <div class="kv" id="status">Status: <span style="color:var(--muted)">No code entered</span></div>
+
+        <div id="claimOptions" style="display:none;margin-top:16px">
+          <div style="display:flex;gap:12px;align-items:center">
+            <label style="display:flex;gap:10px;align-items:center"><input type="checkbox" id="optGold"> <strong>Gold</strong></label>
+            <label style="display:flex;gap:10px;align-items:center"><input type="checkbox" id="optSilver"> <strong>Silver</strong></label>
+            <label style="display:flex;gap:10px;align-items:center"><input type="checkbox" id="optDiamond"> <strong>Diamond</strong></label>
+          </div>
+
+          <div id="claimForm" style="display:none;margin-top:14px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <input id="channelName" class="input" placeholder="Channel name (e.g. ABHINAV)" />
+              <input id="contact" class="input" placeholder="Contact email or phone" />
+            </div>
+            <div style="margin-top:12px" class="row">
+              <button id="submitClaim" class="btn btn-primary">Submit Claim</button>
+              <button id="resetBtn" class="btn btn-ghost">Reset</button>
+              <div style="flex:1"></div>
+              <div style="font-size:13px;color:var(--muted)">Verified codes expire in 30 days</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tracker" class="tracker" style="display:none">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="font-weight:800">Award Progress</div>
+            <div style="color:var(--muted)" id="trackInfo">Tracking: —</div>
+          </div>
+
+          <div class="steps" style="margin-top:12px">
+            <div class="step" id="st1"><div style="font-weight:900">Verified</div><div style="color:var(--muted);margin-top:6px">Identity confirmed</div></div>
+            <div class="step" id="st2"><div style="font-weight:900">In Production</div><div style="color:var(--muted);margin-top:6px">Crafting award</div></div>
+            <div class="step" id="st3"><div style="font-weight:900">Polishing</div><div style="color:var(--muted);margin-top:6px">Quality check</div></div>
+            <div class="step" id="st4"><div style="font-weight:900">Ready</div><div style="color:var(--muted);margin-top:6px">Ready for pickup</div></div>
+          </div>
+          <div class="connector" style="margin-top:12px"><i id="bar"></i></div>
+        </div>
+
       </div>
 
-      <div style="margin-top:22px" class="helper">Recent activity</div>
-      <div style="margin-top:8px;color:var(--muted);font-size:13px">— No recent bank activities (demo view)</div>
-    </main>
+    </section>
 
-    <aside class="card">
-      <div style="font-weight:900">Security & Design</div>
-      <div style="color:var(--muted);margin-top:8px">Premium-grade encryption visuals, glassmorphism UI and cinematic micro-interactions.</div>
-
-      <div style="margin-top:18px">
-        <div style="font-weight:800">Connected services</div>
-        <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
-          <div style="width:40px;height:40px;border-radius:8px;background:linear-gradient(90deg,#58a6ff,#0061ff);display:grid;place-items:center">DB</div>
-          <div style="font-weight:700">Dropbox</div>
+    <aside>
+      <div class="card parallax-scene">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <div style="font-weight:900">Preview Awards</div>
+          <div style="color:var(--muted);font-size:13px">Highly animated showcase</div>
         </div>
+
+        <div class="layer">
+          <div class="play-grid">
+            <div class="card-play floaty">
+              <div class="play-wrap gold" id="goldWrap"><svg width="48" height="32" viewBox="0 0 24 24" fill="none"><path d="M9.5 7.5L16 11L9.5 14.5V7.5Z" fill="#221a05"/></svg></div>
+              <div>
+                <div style="font-weight:900" class="shimmer">Gold Playbutton</div>
+                <div style="color:var(--muted)">Premium milestone</div>
+              </div>
+            </div>
+
+            <div class="card-play floaty" style="opacity:0.96">
+              <div class="play-wrap silver" id="silverWrap"><svg width="48" height="32" viewBox="0 0 24 24" fill="none"><path d="M9.5 7.5L16 11L9.5 14.5V7.5Z" fill="#111827"/></svg></div>
+              <div>
+                <div style="font-weight:900" class="shimmer">Silver Playbutton</div>
+                <div style="color:var(--muted)">Standard milestone</div>
+              </div>
+            </div>
+
+            <div class="card-play floaty" style="grid-column:span 2;align-items:center">
+              <div class="play-wrap diamond" id="diamondWrap" style="width:160px;height:104px;border-radius:20px"><svg width="84" height="64" viewBox="0 0 24 24" fill="none"><path d="M12 3l3 4 4 2-4 5-3 5-3-5-4-5 4-2 3-4z" fill="#0b1b2b" opacity="0.96"/></svg></div>
+              <div>
+                <div style="font-weight:900" class="shimmer">Diamond Playbutton</div>
+                <div style="color:var(--muted)">Exclusive milestone</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px;color:var(--muted);font-size:13px">Experience premium motion: 3D float, layered parallax, sheen sweep and cinematic reveal.</div>
       </div>
     </aside>
   </div>
+
 </div>
 
-<!-- Add Account Modal -->
-<div class="modal-back" id="modalBack" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div style="display:flex;gap:12px;align-items:center;justify-content:center">
-      <div style="font-weight:900;font-size:18px" id="modalTitle">Add Bank Account</div>
-    </div>
-
-    <div style="margin-top:12px" class="form-row">
-      <input id="accName" class="input" placeholder="Account holder name (e.g. Sher Singh Choudhary)">
-      <input id="accNumber" class="input" placeholder="Account number">
-    </div>
-    <div style="margin-top:12px" class="form-row">
-      <input id="ifsc" class="input" placeholder="IFSC / Routing">
-      <input id="bankName" class="input" placeholder="Bank name">
-    </div>
-    <div style="margin-top:12px" class="helper">All fields demo-only. No data is transmitted.</div>
-
-    <div style="display:flex;gap:10px;justify-content:center;margin-top:18px">
-      <button id="submitAcc" class="btn btn-primary">Add Account</button>
-      <button id="cancelAcc" class="btn btn-ghost">Cancel</button>
+<!-- pop + confetti -->
+<div class="youtube-pop" id="youtubePop">
+  <div class="pop-card" id="popCard">
+    <div class="confetti" id="confetti"></div>
+    <div class="ylogo-large" id="ylogo">
+      <svg width="120" height="86" viewBox="0 0 24 24" fill="none"><rect x="1" y="3" width="22" height="14" rx="3" fill="#FF0000"/><path d="M10 8L16 11L10 14V8Z" fill="#fff"/></svg>
     </div>
   </div>
 </div>
 
-<!-- Success popup -->
-<div class="modal-back" id="successBack" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true" style="text-align:center">
-    <div class="tick" id="tick">
-      <!-- green tick icon -->
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
-    <h3 id="successTitle">Your bank account has been added</h3>
-    <p id="successText">Name: <strong id="successName">Sher Singh Choudhary</strong></p>
-    <div style="margin-top:18px">
-      <button id="closeSuccess" class="btn btn-primary">Done</button>
-    </div>
-  </div>
-</div>
-
-<div class="bottom-fixed">
-  <button class="small-btn" id="demoBtn">Demo Add</button>
-  <button class="small-btn" id="helpBtn">Help</button>
-</div>
+<div class="congrats-banner" id="congrats">🔥 CONGRATULATIONS ABHINAV 🔥 — THE WORLD KNOWS YOUR NAME NOW!</div>
 
 <script>
-// Elements
-const openAdd = document.getElementById('openAdd');
-const modalBack = document.getElementById('modalBack');
-const cancelAcc = document.getElementById('cancelAcc');
-const submitAcc = document.getElementById('submitAcc');
-const successBack = document.getElementById('successBack');
-const tick = document.getElementById('tick');
-const successName = document.getElementById('successName');
-const closeSuccess = document.getElementById('closeSuccess');
-const accName = document.getElementById('accName');
-const accNumber = document.getElementById('accNumber');
-const ifsc = document.getElementById('ifsc');
-const bankName = document.getElementById('bankName');
-const demoBtn = document.getElementById('demoBtn');
-const helpBtn = document.getElementById('helpBtn');
+// Enhanced interactions + micro physics
+function validate(code){ if(!code) return null; code=code.trim().toUpperCase(); if(/^GOLD-[A-Z0-9]{3,6}$/.test(code)) return {tier:'gold',variant:'Gold'}; if(/^SILV-[A-Z0-9]{3,6}$/.test(code)) return {tier:'silver',variant:'Silver'}; if(/^DIAM-[A-Z0-9]{3,6}$/.test(code)) return {tier:'diamond',variant:'Diamond'}; return null }
 
-// open modal
-openAdd.addEventListener('click', ()=>{
-  modalBack.style.display='flex';
-  modalBack.setAttribute('aria-hidden','false');
-  // entrance animation
-  document.querySelector('.modal').animate([{transform:'translateY(20px) scale(.98)',opacity:0},{transform:'translateY(0) scale(1)',opacity:1}],{duration:700,easing:'cubic-bezier(.2,.9,.2,1)'});
+const verifyBtn = document.getElementById('verifyBtn');
+const clearBtn = document.getElementById('clearBtn');
+const claimOptions = document.getElementById('claimOptions');
+const claimForm = document.getElementById('claimForm');
+const submitClaim = document.getElementById('submitClaim');
+const resetBtn = document.getElementById('resetBtn');
+const status = document.getElementById('status');
+const tracker = document.getElementById('tracker');
+const bar = document.getElementById('bar');
+const stEls = [document.getElementById('st1'),document.getElementById('st2'),document.getElementById('st3'),document.getElementById('st4')];
+const youtubePop = document.getElementById('youtubePop');
+const ylogo = document.getElementById('ylogo');
+const confetti = document.getElementById('confetti');
+const congratsBanner = document.getElementById('congrats');
+let current=null; let tracking=null;
+
+verifyBtn.addEventListener('click', ()=>{
+  const code = document.getElementById('claimCode').value; const res = validate(code);
+  if(!res){ status.innerHTML = 'Status: <span style="color:var(--muted)">Invalid code format</span>'; claimOptions.style.display='none'; claimForm.style.display='none'; return; }
+  // luxury verify animation: shimmer highlight
+  status.innerHTML = `Status: <strong style=\"color:var(--gold)\">${res.variant} code verified</strong>`;
+  claimOptions.style.display='block'; claimForm.style.display='none';
+  // default select all (user can uncheck)
+  document.getElementById('optGold').checked = true; document.getElementById('optSilver').checked = true; document.getElementById('optDiamond').checked = true;
+  current = res;
+  // tiny burst on verified
+  const el = document.getElementById('claimCode'); el.animate([{boxShadow:'0 0 0px rgba(212,169,69,0)'},{boxShadow:'0 0 48px rgba(212,169,69,0.18)'},{boxShadow:'0 0 8px rgba(212,169,69,0.06)'}],{duration:700});
 });
 
-// cancel
-cancelAcc.addEventListener('click', ()=>{ modalBack.style.display='none'; modalBack.setAttribute('aria-hidden','true'); });
+clearBtn.addEventListener('click', ()=>{ document.getElementById('claimCode').value=''; status.innerHTML='Status: <span style="color:var(--muted)">No code entered</span>'; claimOptions.style.display='none'; claimForm.style.display='none'; tracker.style.display='none'; current=null; });
 
-// submit (simulate adding account)
-submitAcc.addEventListener('click', ()=>{
-  const nameVal = accName.value.trim() || 'Sher Singh Choudhary';
-  // close add modal
-  modalBack.style.display='none'; modalBack.setAttribute('aria-hidden','true');
-  // set success name to required value (Sher Singh Choudhary)
-  successName.textContent = nameVal;
-  // show success popup
-  successBack.style.display='flex'; successBack.setAttribute('aria-hidden','false');
-  // animate tick and modal
-  const modalEl = successBack.querySelector('.modal');
-  modalEl.animate([{transform:'translateY(20px) scale(.98)',opacity:0},{transform:'translateY(0) scale(1)',opacity:1}],{duration:700,easing:'cubic-bezier(.2,.9,.2,1)'});
-  tick.animate([{transform:'scale(.6)',opacity:0},{transform:'scale(1.06)',opacity:1},{transform:'scale(1)',opacity:1}],{duration:900,easing:'cubic-bezier(.2,.9,.2,1)'});
-  // tiny confetti of green dots
-  fireGreenConfetti();
+// show claim form when option toggled
+['optGold','optSilver','optDiamond'].forEach(id=>document.getElementById(id).addEventListener('change', ()=>{ const any = document.getElementById('optGold').checked || document.getElementById('optSilver').checked || document.getElementById('optDiamond').checked; claimForm.style.display = any ? 'block' : 'none'; }));
+
+resetBtn.addEventListener('click', ()=>{ document.getElementById('channelName').value=''; document.getElementById('contact').value=''; });
+
+submitClaim.addEventListener('click', ()=>{
+  if(!current){ alert('Verify a code first'); return; }
+  const cname = document.getElementById('channelName').value.trim(); if(!cname){ alert('Enter channel name'); return; }
+  tracking = 'TRK-'+Math.random().toString(36).slice(2,9).toUpperCase(); document.getElementById('trackInfo').textContent = 'Tracking: '+tracking+' — Variant: '+current.variant; tracker.style.display='block'; triggerPopAndConfetti(cname); runProgress();
 });
 
-// close success
-closeSuccess.addEventListener('click', ()=>{ successBack.style.display='none'; successBack.setAttribute('aria-hidden','true'); });
+function runProgress(){ stEls.forEach(e=>e.classList.remove('active')); bar.style.width='0%'; const steps=[600,1600,2600,3400]; steps.forEach((t,i)=>setTimeout(()=>{ stEls[i].classList.add('active'); bar.style.width = (((i+1)/steps.length)*100) + '%'; if(i===steps.length-1){ document.getElementById('trackInfo').textContent += ' — READY'; finalFlourish(); } }, t)); }
 
-// demo and help
-demoBtn.addEventListener('click', ()=>{
-  // prefill and submit
-  accName.value = 'Sher Singh Choudhary';
-  accNumber.value = '1234567890';
-  ifsc.value = 'SBIN0000001';
-  bankName.value = 'Premium Bank';
-  openAdd.click();
-  setTimeout(()=> submitAcc.click(), 900);
-});
-helpBtn.addEventListener('click', ()=> alert('This demo securely simulates adding a bank account (no data leaves your browser).'));
-
-// green confetti
-function fireGreenConfetti(){
-  const c = document.createElement('div'); c.style.position='absolute'; c.style.inset='0'; c.style.pointerEvents='none'; successBack.querySelector('.modal').appendChild(c);
-  const colors = ['#10b981','#34d399','#059669'];
-  for(let i=0;i<22;i++){
-    const p = document.createElement('div'); p.style.position='absolute'; p.style.left = (40+Math.random()*40) + '%'; p.style.top = (20+Math.random()*40) + '%'; p.style.width = (6+Math.random()*12)+'px'; p.style.height = (10+Math.random()*16)+'px'; p.style.background = colors[Math.floor(Math.random()*colors.length)]; p.style.borderRadius='6px'; p.style.opacity='1'; c.appendChild(p);
-    const anim = p.animate([{transform:'translateY(0) rotate(0deg)',opacity:1},{transform:'translateY(-120px) rotate('+ (360+Math.random()*720) +'deg)',opacity:0}],{duration:900+Math.random()*600,delay:Math.random()*200});
-    anim.onfinish = ()=> p.remove();
-  }
-  setTimeout(()=> c.remove(), 2200);
+function triggerPopAndConfetti(name){ youtubePop.style.display='flex'; // ylogo entrance
+  ylogo.animate([{transform:'translateY(60px) scale(.6)',opacity:0},{transform:'translateY(-12px) scale(1.08)',opacity:1},{transform:'translateY(0) scale(1)',opacity:1}],{duration:900,easing:'cubic-bezier(.2,.9,.2,1)'});
+  // create confetti
+  createConfetti(40);
+  // glowing ring behind
+  const ring = document.createElement('div'); ring.style.position='absolute'; ring.style.width='420px'; ring.style.height='420px'; ring.style.borderRadius='50%'; ring.style.boxShadow='0 0 220px 60px rgba(212,169,69,0.06), inset 0 0 120px rgba(255,255,255,0.02)'; ring.style.zIndex='1'; ring.style.opacity='0'; document.getElementById('popCard').appendChild(ring); ring.animate([{opacity:0},{opacity:1},{opacity:0}],{duration:2200}).onfinish=()=> ring.remove();
+  // show congrats
+  congratsBanner.textContent = '🔥 CONGRATULATIONS '+ (name.toUpperCase()) +' 🔥 — THE WORLD KNOWS YOUR NAME NOW!'; setTimeout(()=> congratsBanner.classList.add('show'), 380);
+  setTimeout(()=>{ congratsBanner.classList.remove('show'); }, 7000);
+  setTimeout(()=>{ youtubePop.addEventListener('click', hidePopOnce) }, 800);
 }
+function hidePopOnce(e){ if(e.target!==youtubePop) return; youtubePop.style.display='none'; youtubePop.removeEventListener('click', hidePopOnce); }
 
-// close modals on ESC or click outside
-window.addEventListener('keydown', e=>{ if(e.key==='Escape'){ modalBack.style.display='none'; successBack.style.display='none'; modalBack.setAttribute('aria-hidden','true'); successBack.setAttribute('aria-hidden','true'); } });
-modalBack.addEventListener('click', (e)=>{ if(e.target === modalBack) { modalBack.style.display='none'; modalBack.setAttribute('aria-hidden','true'); } });
-successBack.addEventListener('click', (e)=>{ if(e.target === successBack) { successBack.style.display='none'; successBack.setAttribute('aria-hidden','true'); } });
+function createConfetti(n){ confetti.innerHTML=''; const colors=['#FFD700','#FF4D4D','#8BC6FF','#C0C6CC','#D4AF37','#9B59B6']; for(let i=0;i<n;i++){ const p=document.createElement('div'); p.className='particle'; const left = Math.random()*100; p.style.left = left+'%'; p.style.top = (10+Math.random()*10)+'%'; p.style.background = colors[Math.floor(Math.random()*colors.length)]; p.style.transform = 'translateY(0) rotate('+Math.random()*360+'deg)'; p.style.opacity = '1'; p.style.width = (6+Math.random()*12)+'px'; p.style.height = (12+Math.random()*20)+'px'; confetti.appendChild(p); const fall = p.animate([{transform:'translateY(0) rotate(0deg)',opacity:1},{transform:'translateY(420px) rotate('+ (360+Math.random()*720) +'deg)',opacity:0}],{duration:1200+Math.random()*1600,delay:Math.random()*300}); fall.onfinish = ()=> p.remove(); } }
+
+function finalFlourish(){ // subtle camera shake on steps finish and shine flash
+  const steps = document.querySelectorAll('.step'); steps.forEach((s,i)=> s.animate([{transform:'translateY(-12px)'},{transform:'translateY(-6px)'},{transform:'translateY(-12px)'}],{duration:800,delay:i*80})); document.body.animate([{filter:'brightness(1)'},{filter:'brightness(1.06)'},{filter:'brightness(1)'}],{duration:800}); }
+
+// demo/help
+document.getElementById('demoBtn').addEventListener('click', ()=>{ document.getElementById('claimCode').value='GOLD-7F4A'; document.getElementById('verifyBtn').click(); setTimeout(()=>{ document.getElementById('channelName').value='ABHINAV'; document.getElementById('submitClaim').click(); },900); });
+
+document.getElementById('helpBtn').addEventListener('click', ()=> alert('Use codes like GOLD-7F4A, SILV-AB12, DIAM-0001. This demo simulates an official award claim flow with premium animations.'));
+
+// close on ESC
+window.addEventListener('keydown', e=>{ if(e.key==='Escape'){ youtubePop.style.display='none'; congratsBanner.classList.remove('show'); } });
+
+// parallax pointer movement for showcase
+const scene = document.querySelector('.parallax-scene'); if(scene){ scene.addEventListener('pointermove', (e)=>{ const rect = scene.getBoundingClientRect(); const x = (e.clientX - rect.left) / rect.width - 0.5; const y = (e.clientY - rect.top) / rect.height - 0.5; document.querySelectorAll('.card-play').forEach((el,i)=>{ const depth = (i%3 + 1) * 6; el.style.transform = `translateZ(${depth}px) translateY(${ -y*8 }px) translateX(${ x*8 }px)`; }); }); scene.addEventListener('pointerleave', ()=>{ document.querySelectorAll('.card-play').forEach((el)=> el.style.transform=''); }); }
 </script>
 </body>
 </html>
