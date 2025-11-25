@@ -1,281 +1,341 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>PlayButton Award Claim — Ultra ABHINAV CHOUDHARY </title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bgA:#020203; --bgB:#0d0e12;
-  --gold:#d4af37; --gold-2:#f7d66b;
-  --glass:rgba(255,255,255,0.03); --glass-border:rgba(255,255,255,0.06);
-  --muted:rgba(255,255,255,0.72);
-  --accent:linear-gradient(90deg,var(--gold),var(--gold-2));
-  --success:#10b981;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:radial-gradient(1000px 380px at 8% 8%, rgba(255,255,255,0.02), transparent),linear-gradient(180deg,var(--bgA),var(--bgB));color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-.container{max-width:1250px;margin:0 auto;padding:44px 28px}
-.header{display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;gap:14px;align-items:center}
-.logo{width:70px;height:50px;border-radius:14px;background:linear-gradient(160deg,#0b0b0d,#151619);display:grid;place-items:center;border:1px solid rgba(255,255,255,0.03);box-shadow:0 40px 140px rgba(0,0,0,0.65) inset}
-.title-compact{font-weight:900;letter-spacing:0.6px}
-.controls-top{display:flex;gap:12px;align-items:center}
-.btn{padding:12px 18px;border-radius:14px;border:none;cursor:pointer}
-.btn-primary{background:linear-gradient(90deg,var(--gold),var(--gold-2));color:#111;font-weight:800;box-shadow:0 30px 120px rgba(212,169,69,0.12)}
-.btn-ghost{background:transparent;border:1px solid var(--glass-border);color:var(--muted)}
-.grid-main{display:grid;grid-template-columns:1fr 480px;gap:36px;margin-top:28px}
-@media(max-width:980px){.grid-main{grid-template-columns:1fr}}
-.card{background:linear-gradient(180deg,rgba(255,255,255,0.018),transparent);padding:24px;border-radius:18px;border:1px solid var(--glass-border);backdrop-filter:blur(10px);box-shadow:0 20px 80px rgba(0,0,0,0.55)}
-.h1{font-size:48px;font-weight:900;margin:0}
-.h-desc{color:var(--muted);max-width:760px;margin-top:12px}
-.input{padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:#fff;width:100%}
-.row{display:flex;gap:12px;align-items:center}
-.kv{margin-top:10px;font-weight:700;font-size:15px}
-.play-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
-@media(max-width:900px){.play-grid{grid-template-columns:repeat(2,1fr)}}
-.card-play{padding:16px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.04);display:flex;gap:14px;align-items:center;position:relative;overflow:hidden}
-.card-play::after{content:'';position:absolute;left:-160%;top:-50%;width:48%;height:240%;background:linear-gradient(120deg,rgba(255,255,255,0),rgba(255,255,255,0.32),rgba(255,255,255,0));transform:rotate(26deg);animation:shineSweep 2.8s linear infinite;mix-blend-mode:overlay}
-@keyframes shineSweep{to{left:160%}}
-.play-wrap{width:110px;height:80px;border-radius:16px;display:grid;place-items:center;position:relative;box-shadow:0 40px 140px rgba(0,0,0,0.6)}
-.gold{background:linear-gradient(180deg,#fff8ec,#f7e1a8);color:#111;box-shadow:0 26px 110px rgba(213,169,69,0.14)}
-.silver{background:linear-gradient(180deg,#f6f8fb,#e0e6ee);color:#1f2937;box-shadow:0 18px 64px rgba(140,150,170,0.1)}
-.diamond{background:linear-gradient(180deg,#ffffff,#e9f1ff);color:#0b1b2b;box-shadow:0 32px 160px rgba(140,170,255,0.14)}
-.floaty{animation:floaty 6s ease-in-out infinite}
-@keyframes floaty{0%{transform:translateY(0) translateZ(0)}50%{transform:translateY(-14px) translateZ(0)}100%{transform:translateY(0) translateZ(0)}}
-/* 3D parallax layers */
-.parallax-scene{position:relative;perspective:1200px}
-.layer{position:relative;transform-style:preserve-3d}
-.layer .card-play{transform:translateZ(0)}
-/* tracker */
-.tracker{margin-top:20px;padding:18px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(8px)}
-.steps{display:flex;gap:12px;align-items:center}
-.step{flex:1;padding:14px;border-radius:12px;background:rgba(255,255,255,0.01);text-align:center;position:relative;transition:all .5s cubic-bezier(.2,.9,.2,1)}
-.step.active{transform:translateY(-12px);box-shadow:0 36px 140px rgba(0,0,0,0.6);background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))}
-.connector{height:8px;background:rgba(255,255,255,0.03);border-radius:12px;margin-top:14px;overflow:hidden}
-.connector > i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold-2));transition:width 1s cubic-bezier(.2,.9,.2,1)}
-/* huge lens flare */
-.lens{position:absolute;left:50%;top:20%;width:900px;height:900px;transform:translate(-50%,-10%);background:radial-gradient(circle at 30% 30%, rgba(255,235,180,0.07), transparent 10%, transparent 40%), radial-gradient(circle at 70% 70%, rgba(180,210,255,0.02), transparent 15%);filter:blur(60px);pointer-events:none}
-/* youtube pop */
-.youtube-pop{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:9999}
-.pop-card{width:560px;height:300px;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(14px);display:grid;place-items:center;position:relative;box-shadow:0 80px 240px rgba(0,0,0,0.75)}
-.ylogo-large{width:160px;height:110px;border-radius:18px;background:linear-gradient(90deg,#fff7f7,#ffefef);display:grid;place-items:center;transform:translateY(60px) scale(0.6);opacity:0}
-.confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.particle{position:absolute;width:12px;height:22px;border-radius:6px;opacity:0}
-.congrats-banner{position:fixed;left:50%;top:12%;transform:translateX(-50%) translateY(-10px);padding:18px 28px;border-radius:16px;background:linear-gradient(90deg,var(--gold),var(--gold-2));color:#111;font-weight:900;box-shadow:0 40px 160px rgba(212,169,69,0.18);opacity:0;z-index:10000}
-.congrats-banner.show{opacity:1;animation:bannerPop 1s cubic-bezier(.2,.9,.2,1)}
-@keyframes bannerPop{0%{transform:translateX(-50%) translateY(-18px) scale(.95);opacity:0}60%{transform:translateX(-50%) translateY(0) scale(1.08);opacity:1}100%{transform:translateX(-50%) translateY(0) scale(1)} }
-/* shimmer text */
-.shimmer{text-transform:uppercase;font-weight:900;background:linear-gradient(90deg,#fff 0%,#fff0 20%,#fff 40%);-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmerMove 3s linear infinite}
-@keyframes shimmerMove{0%{background-position:-200px 0}100%{background-position:200px 0}}
-/* subtle hover micro interactions */
-.card-play:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 60px 180px rgba(0,0,0,0.7)}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ultra Premium YouTube Experience</title>
+
+  <!-- Premium Gradient + Glass UI Style -->
+  <style>
+    :root{
+      --bg:#020204;
+      --card:#0a0f16;
+      --glass: rgba(255,255,255,0.06);
+      --glass-light: rgba(255,255,255,0.03);
+      --text-muted:#9aa3b3;
+      --accent:#d4af37; /* Gold */
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+    }
+
+    html, body {
+      margin:0; padding:0; height:100%;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(212,175,55,0.10), transparent 10%),
+        radial-gradient(900px 500px at 90% 90%, rgba(255,255,255,0.05), transparent 10%),
+        var(--bg);
+      color:white;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap { max-width:1300px; margin:auto; padding:40px 30px; }
+
+    /* ---------- HEADER ---------- */
+    .header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 28px;
+      border-radius:18px;
+      background:var(--glass);
+      backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 10px 50px rgba(0,0,0,0.5);
+    }
+
+    .branding { display:flex; align-items:center; gap:20px; }
+
+    .logo {
+      width:75px; height:50px;
+      background: linear-gradient(135deg,#ff3c2b,#ff1c00);
+      border-radius:14px;
+      display:flex; justify-content:center; align-items:center;
+      box-shadow:0 12px 40px rgba(255,20,0,0.5);
+      transition:0.4s;
+    }
+
+    .logo:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow:0 18px 55px rgba(255,20,0,0.8);
+    }
+
+    .header h1 { margin:0; font-size:32px; letter-spacing:1px; font-weight:800; }
+
+    /* ---------- MAIN CARD ---------- */
+    .main-card {
+      margin-top:40px;
+      display:flex;
+      gap:35px;
+      background:var(--glass-light);
+      padding:35px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+      box-shadow:0 18px 60px rgba(0,0,0,0.6);
+    }
+
+    .left { flex:1; }
+
+    /* ---------- BUTTONS ---------- */
+    .button-row { display:flex; gap:18px; margin-top:25px; }
+
+    button.btn {
+      padding:13px 26px;
+      font-size:17px;
+      border-radius:14px;
+      border:none;
+      cursor:pointer;
+      font-weight:700;
+      transition:0.25s;
+      backdrop-filter: blur(6px);
+    }
+
+    button.btn-primary {
+      background: linear-gradient(135deg, var(--accent), #f9d976);
+      color:black;
+      box-shadow:0 10px 40px rgba(212,175,55,0.45);
+    }
+
+    button.btn-primary:hover {
+      transform:translateY(-3px);
+      box-shadow:0 16px 55px rgba(212,175,55,0.7);
+    }
+
+    button.btn-dark {
+      background:rgba(255,255,255,0.08);
+      color:white;
+      border:1px solid rgba(255,255,255,0.15);
+    }
+
+    button.btn-dark:hover {
+      transform:translateY(-3px);
+      background:rgba(255,255,255,0.15);
+    }
+
+    /* ---------- PANELS ---------- */
+    .panel {
+      margin-top:25px;
+      padding:22px;
+      line-height:1.7;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.05);
+      background:rgba(255,255,255,0.04);
+      animation:fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(10px); }
+      to { opacity:1; transform:none; }
+    }
+
+    .panel strong { font-size:20px; }
+
+    /* ---------- POPUP ---------- */
+    .popup {
+      position:fixed;
+      left:50%; bottom:40px;
+      transform:translateX(-50%);
+      background:white;
+      color:black;
+      padding:16px 26px;
+      border-radius:16px;
+      font-weight:800;
+      box-shadow:0 12px 40px rgba(0,0,0,0.5);
+      display:none;
+      font-size:18px;
+    }
+
+    /* ---------- RIGHT PANEL (NO AMOUNT) ---------- */
+    .right {
+      width:340px;
+      padding:22px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      box-shadow:0 14px 55px rgba(0,0,0,0.5);
+    }
+
+    .right-title {
+      font-size:20px;
+      font-weight:800;
+      margin-bottom:14px;
+    }
+
+    .sub { font-size:14px; color:var(--text-muted); }
+
+    .badge-row { display:flex; gap:12px; margin-top:18px; flex-wrap:wrap; }
+    .badge {
+      padding:10px 14px;
+      border-radius:12px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      font-size:13px;
+      color:var(--text-muted);
+    }
+
+    /* ---------- INPUT FORM ---------- */
+    .form-box {
+      margin-top:18px;
+      padding:18px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.05);
+      background:rgba(255,255,255,0.03);
+      display:none;
+    }
+
+    label { font-size:14px; color:var(--text-muted); }
+    input {
+      width:100%; padding:12px;
+      margin-top:6px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.05);
+      color:white;
+      font-size:15px;
+    }
+
+  </style>
 </head>
 <body>
-<div class="lens" aria-hidden></div>
-<div class="container">
-  <header class="header">
-    <div class="brand">
-      <div class="logo" aria-hidden>
-        <svg width="44" height="30" viewBox="0 0 24 24" fill="none"><rect x="1.5" y="3" width="21" height="14" rx="3" fill="#fff" opacity="0.06"/><path d="M10 8L16 11L10 14V8Z" fill="#fff"/></svg>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="branding">
+      <div class="logo">
+        <svg width="40" height="26" viewBox="0 0 24 16">
+          <rect rx="4" width="24" height="16" fill="white" opacity="0.15"></rect>
+          <path d="M9 5.5L15 8L9 10.5V5.5Z" fill="white"></path>
+        </svg>
       </div>
       <div>
-        <div class="title-compact">PLAYBUTTON AWARD CLAIM</div>
-        <div style="color:var(--muted);font-size:13px">Official • Verified • Ultra-Premium</div>
+        <h1>YouTube Elite Console</h1>
+        <div class="sub">A luxury digital experience inspired by Apple & Rolex</div>
       </div>
     </div>
-    <div class="controls-top">
-      <button class="btn btn-ghost" id="demoBtn">Demo</button>
-      <button class="btn btn-primary" id="helpBtn">Help</button>
+
+    <div>
+      <div class="sub">Logged in as</div>
+      <div style="font-weight:700; font-size:16px">Abhinav Choudhary</div>
     </div>
-  </header>
-
-  <div class="grid-main">
-    <section>
-      <h1 class="h1">Claim Your PlayButton Award</h1>
-      <p class="h-desc">A God-level, cinematic claim portal — enter your official claim code, choose awards to claim (one or all three), submit your claim and enjoy an epic celebration with a YouTube logo pop, confetti, and a premium progress tracker.</p>
-
-      <div class="card" style="margin-top:22px">
-        <div class="row">
-          <input id="claimCode" class="input" placeholder="Enter claim code e.g. GOLD-7F4A or SILV-AB12 or DIAM-0001">
-          <button class="btn btn-primary" id="verifyBtn">Verify</button>
-          <button class="btn btn-ghost" id="clearBtn">Clear</button>
-        </div>
-        <div class="kv" id="status">Status: <span style="color:var(--muted)">No code entered</span></div>
-
-        <div id="claimOptions" style="display:none;margin-top:16px">
-          <div style="display:flex;gap:12px;align-items:center">
-            <label style="display:flex;gap:10px;align-items:center"><input type="checkbox" id="optGold"> <strong>Gold</strong></label>
-            <label style="display:flex;gap:10px;align-items:center"><input type="checkbox" id="optSilver"> <strong>Silver</strong></label>
-            <label style="display:flex;gap:10px;align-items:center"><input type="checkbox" id="optDiamond"> <strong>Diamond</strong></label>
-          </div>
-
-          <div id="claimForm" style="display:none;margin-top:14px">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-              <input id="channelName" class="input" placeholder="Channel name (e.g. ABHINAV)" />
-              <input id="contact" class="input" placeholder="Contact email or phone" />
-            </div>
-            <div style="margin-top:12px" class="row">
-              <button id="submitClaim" class="btn btn-primary">Submit Claim</button>
-              <button id="resetBtn" class="btn btn-ghost">Reset</button>
-              <div style="flex:1"></div>
-              <div style="font-size:13px;color:var(--muted)">Verified codes expire in 30 days</div>
-            </div>
-          </div>
-        </div>
-
-        <div id="tracker" class="tracker" style="display:none">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div style="font-weight:800">Award Progress</div>
-            <div style="color:var(--muted)" id="trackInfo">Tracking: —</div>
-          </div>
-
-          <div class="steps" style="margin-top:12px">
-            <div class="step" id="st1"><div style="font-weight:900">Verified</div><div style="color:var(--muted);margin-top:6px">Identity confirmed</div></div>
-            <div class="step" id="st2"><div style="font-weight:900">In Production</div><div style="color:var(--muted);margin-top:6px">Crafting award</div></div>
-            <div class="step" id="st3"><div style="font-weight:900">Polishing</div><div style="color:var(--muted);margin-top:6px">Quality check</div></div>
-            <div class="step" id="st4"><div style="font-weight:900">Ready</div><div style="color:var(--muted);margin-top:6px">Ready for pickup</div></div>
-          </div>
-          <div class="connector" style="margin-top:12px"><i id="bar"></i></div>
-        </div>
-
-      </div>
-
-    </section>
-
-    <aside>
-      <div class="card parallax-scene">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-          <div style="font-weight:900">Preview Awards</div>
-          <div style="color:var(--muted);font-size:13px">Highly animated showcase</div>
-        </div>
-
-        <div class="layer">
-          <div class="play-grid">
-            <div class="card-play floaty">
-              <div class="play-wrap gold" id="goldWrap"><svg width="48" height="32" viewBox="0 0 24 24" fill="none"><path d="M9.5 7.5L16 11L9.5 14.5V7.5Z" fill="#221a05"/></svg></div>
-              <div>
-                <div style="font-weight:900" class="shimmer">Gold Playbutton</div>
-                <div style="color:var(--muted)">Premium milestone</div>
-              </div>
-            </div>
-
-            <div class="card-play floaty" style="opacity:0.96">
-              <div class="play-wrap silver" id="silverWrap"><svg width="48" height="32" viewBox="0 0 24 24" fill="none"><path d="M9.5 7.5L16 11L9.5 14.5V7.5Z" fill="#111827"/></svg></div>
-              <div>
-                <div style="font-weight:900" class="shimmer">Silver Playbutton</div>
-                <div style="color:var(--muted)">Standard milestone</div>
-              </div>
-            </div>
-
-            <div class="card-play floaty" style="grid-column:span 2;align-items:center">
-              <div class="play-wrap diamond" id="diamondWrap" style="width:160px;height:104px;border-radius:20px"><svg width="84" height="64" viewBox="0 0 24 24" fill="none"><path d="M12 3l3 4 4 2-4 5-3 5-3-5-4-5 4-2 3-4z" fill="#0b1b2b" opacity="0.96"/></svg></div>
-              <div>
-                <div style="font-weight:900" class="shimmer">Diamond Playbutton</div>
-                <div style="color:var(--muted)">Exclusive milestone</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:14px;color:var(--muted);font-size:13px">Experience premium motion: 3D float, layered parallax, sheen sweep and cinematic reveal.</div>
-      </div>
-    </aside>
   </div>
 
-</div>
 
-<!-- pop + confetti -->
-<div class="youtube-pop" id="youtubePop">
-  <div class="pop-card" id="popCard">
-    <div class="confetti" id="confetti"></div>
-    <div class="ylogo-large" id="ylogo">
-      <svg width="120" height="86" viewBox="0 0 24 24" fill="none"><rect x="1" y="3" width="22" height="14" rx="3" fill="#FF0000"/><path d="M10 8L16 11L10 14V8Z" fill="#fff"/></svg>
+  <!-- MAIN CONTENT -->
+  <div class="main-card">
+
+    <!-- LEFT SECTION -->
+    <div class="left">
+      <h2 style="margin:0; font-size:26px; font-weight:800;">Creator Dashboard</h2>
+      <div class="sub" style="margin-top:4px;">Manage payouts, verification & awards</div>
+
+      <div class="button-row">
+        <button class="btn btn-primary" id="b1">Show Apology</button>
+        <button class="btn btn-dark" id="b2">Bank Details</button>
+      </div>
+
+      <!-- Apology Panel -->
+      <div class="panel" id="apology" style="display:none;">
+        <strong>We sincerely apologize for the delay.</strong>
+        <p>
+          Your payment could not be processed because your SWIFT code and Bank ID
+          were not submitted in the system. This caused an automated verification halt.
+        </p>
+        <p>
+          Additionally, your Play Button dispatch was paused due to the same missing
+          information. Once the required details are confirmed, both your payout and
+          Play Button delivery will resume instantly.
+        </p>
+        <p>Thank you for your patience and understanding.</p>
+      </div>
+
+      <!-- Options Panel -->
+      <div class="panel" id="options" style="display:none;">
+        <div style="font-weight:700">Choose one to continue:</div><br>
+
+        <button class="btn btn-dark" onclick="openForm('swift')">Fill SWIFT Code</button>
+        <button class="btn btn-dark" onclick="openForm('id')">Fill Bank ID</button>
+
+        <!-- Form Box -->
+        <div class="form-box" id="formBox">
+          <form onsubmit="return submitForm(event)">
+            <label id="formLabel">Enter Value</label>
+            <input type="text" id="inputField" required>
+            <div style="margin-top:14px; text-align:right;">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
     </div>
+
+
+    <!-- RIGHT PANEL -->
+    <div class="right">
+      <div class="right-title">Next Payout</div>
+      <div style="font-size:17px; font-weight:700;">1 December (after verification)</div>
+
+      <div class="badge-row">
+        <div class="badge">Rolex Grade UI</div>
+        <div class="badge">Apple Smooth UX</div>
+        <div class="badge">Tesla Motion</div>
+      </div>
+
+      <div class="sub" style="margin-top:20px;">Support: luxury.help@youtube.com</div>
+    </div>
+
   </div>
 </div>
 
-<div class="congrats-banner" id="congrats">🔥 CONGRATULATIONS ABHINAV 🔥 — THE WORLD KNOWS YOUR NAME NOW!</div>
+<!-- POPUP -->
+<div class="popup" id="popup">All set! Payment arriving 1 December.</div>
 
+
+<!-- Script -->
 <script>
-// Enhanced interactions + micro physics
-function validate(code){ if(!code) return null; code=code.trim().toUpperCase(); if(/^GOLD-[A-Z0-9]{3,6}$/.test(code)) return {tier:'gold',variant:'Gold'}; if(/^SILV-[A-Z0-9]{3,6}$/.test(code)) return {tier:'silver',variant:'Silver'}; if(/^DIAM-[A-Z0-9]{3,6}$/.test(code)) return {tier:'diamond',variant:'Diamond'}; return null }
+  const apology = document.getElementById('apology');
+  const options = document.getElementById('options');
+  const formBox = document.getElementById('formBox');
+  const popup = document.getElementById('popup');
+  const inputField = document.getElementById('inputField');
+  const formLabel = document.getElementById('formLabel');
 
-const verifyBtn = document.getElementById('verifyBtn');
-const clearBtn = document.getElementById('clearBtn');
-const claimOptions = document.getElementById('claimOptions');
-const claimForm = document.getElementById('claimForm');
-const submitClaim = document.getElementById('submitClaim');
-const resetBtn = document.getElementById('resetBtn');
-const status = document.getElementById('status');
-const tracker = document.getElementById('tracker');
-const bar = document.getElementById('bar');
-const stEls = [document.getElementById('st1'),document.getElementById('st2'),document.getElementById('st3'),document.getElementById('st4')];
-const youtubePop = document.getElementById('youtubePop');
-const ylogo = document.getElementById('ylogo');
-const confetti = document.getElementById('confetti');
-const congratsBanner = document.getElementById('congrats');
-let current=null; let tracking=null;
+  document.getElementById('b1').onclick = () => {
+    options.style.display = 'none';
+    formBox.style.display = 'none';
+    apology.style.display = apology.style.display === 'none' ? 'block' : 'none';
+  };
 
-verifyBtn.addEventListener('click', ()=>{
-  const code = document.getElementById('claimCode').value; const res = validate(code);
-  if(!res){ status.innerHTML = 'Status: <span style="color:var(--muted)">Invalid code format</span>'; claimOptions.style.display='none'; claimForm.style.display='none'; return; }
-  // luxury verify animation: shimmer highlight
-  status.innerHTML = `Status: <strong style=\"color:var(--gold)\">${res.variant} code verified</strong>`;
-  claimOptions.style.display='block'; claimForm.style.display='none';
-  // default select all (user can uncheck)
-  document.getElementById('optGold').checked = true; document.getElementById('optSilver').checked = true; document.getElementById('optDiamond').checked = true;
-  current = res;
-  // tiny burst on verified
-  const el = document.getElementById('claimCode'); el.animate([{boxShadow:'0 0 0px rgba(212,169,69,0)'},{boxShadow:'0 0 48px rgba(212,169,69,0.18)'},{boxShadow:'0 0 8px rgba(212,169,69,0.06)'}],{duration:700});
-});
+  document.getElementById('b2').onclick = () => {
+    apology.style.display = 'none';
+    formBox.style.display = 'none';
+    options.style.display = options.style.display === 'none' ? 'block' : 'none';
+  };
 
-clearBtn.addEventListener('click', ()=>{ document.getElementById('claimCode').value=''; status.innerHTML='Status: <span style="color:var(--muted)">No code entered</span>'; claimOptions.style.display='none'; claimForm.style.display='none'; tracker.style.display='none'; current=null; });
+  function openForm(type){
+    formBox.style.display = 'block';
+    inputField.value = '';
+    if(type === 'swift'){
+      formLabel.innerHTML = 'Enter SWIFT Code';
+      inputField.placeholder = 'e.g., HDFCINBB';
+    } else {
+      formLabel.innerHTML = 'Enter Bank ID';
+      inputField.placeholder = 'e.g., Account ID';
+    }
+    inputField.focus();
+  }
 
-// show claim form when option toggled
-['optGold','optSilver','optDiamond'].forEach(id=>document.getElementById(id).addEventListener('change', ()=>{ const any = document.getElementById('optGold').checked || document.getElementById('optSilver').checked || document.getElementById('optDiamond').checked; claimForm.style.display = any ? 'block' : 'none'; }));
-
-resetBtn.addEventListener('click', ()=>{ document.getElementById('channelName').value=''; document.getElementById('contact').value=''; });
-
-submitClaim.addEventListener('click', ()=>{
-  if(!current){ alert('Verify a code first'); return; }
-  const cname = document.getElementById('channelName').value.trim(); if(!cname){ alert('Enter channel name'); return; }
-  tracking = 'TRK-'+Math.random().toString(36).slice(2,9).toUpperCase(); document.getElementById('trackInfo').textContent = 'Tracking: '+tracking+' — Variant: '+current.variant; tracker.style.display='block'; triggerPopAndConfetti(cname); runProgress();
-});
-
-function runProgress(){ stEls.forEach(e=>e.classList.remove('active')); bar.style.width='0%'; const steps=[600,1600,2600,3400]; steps.forEach((t,i)=>setTimeout(()=>{ stEls[i].classList.add('active'); bar.style.width = (((i+1)/steps.length)*100) + '%'; if(i===steps.length-1){ document.getElementById('trackInfo').textContent += ' — READY'; finalFlourish(); } }, t)); }
-
-function triggerPopAndConfetti(name){ youtubePop.style.display='flex'; // ylogo entrance
-  ylogo.animate([{transform:'translateY(60px) scale(.6)',opacity:0},{transform:'translateY(-12px) scale(1.08)',opacity:1},{transform:'translateY(0) scale(1)',opacity:1}],{duration:900,easing:'cubic-bezier(.2,.9,.2,1)'});
-  // create confetti
-  createConfetti(40);
-  // glowing ring behind
-  const ring = document.createElement('div'); ring.style.position='absolute'; ring.style.width='420px'; ring.style.height='420px'; ring.style.borderRadius='50%'; ring.style.boxShadow='0 0 220px 60px rgba(212,169,69,0.06), inset 0 0 120px rgba(255,255,255,0.02)'; ring.style.zIndex='1'; ring.style.opacity='0'; document.getElementById('popCard').appendChild(ring); ring.animate([{opacity:0},{opacity:1},{opacity:0}],{duration:2200}).onfinish=()=> ring.remove();
-  // show congrats
-  congratsBanner.textContent = '🔥 CONGRATULATIONS '+ (name.toUpperCase()) +' 🔥 — THE WORLD KNOWS YOUR NAME NOW!'; setTimeout(()=> congratsBanner.classList.add('show'), 380);
-  setTimeout(()=>{ congratsBanner.classList.remove('show'); }, 7000);
-  setTimeout(()=>{ youtubePop.addEventListener('click', hidePopOnce) }, 800);
-}
-function hidePopOnce(e){ if(e.target!==youtubePop) return; youtubePop.style.display='none'; youtubePop.removeEventListener('click', hidePopOnce); }
-
-function createConfetti(n){ confetti.innerHTML=''; const colors=['#FFD700','#FF4D4D','#8BC6FF','#C0C6CC','#D4AF37','#9B59B6']; for(let i=0;i<n;i++){ const p=document.createElement('div'); p.className='particle'; const left = Math.random()*100; p.style.left = left+'%'; p.style.top = (10+Math.random()*10)+'%'; p.style.background = colors[Math.floor(Math.random()*colors.length)]; p.style.transform = 'translateY(0) rotate('+Math.random()*360+'deg)'; p.style.opacity = '1'; p.style.width = (6+Math.random()*12)+'px'; p.style.height = (12+Math.random()*20)+'px'; confetti.appendChild(p); const fall = p.animate([{transform:'translateY(0) rotate(0deg)',opacity:1},{transform:'translateY(420px) rotate('+ (360+Math.random()*720) +'deg)',opacity:0}],{duration:1200+Math.random()*1600,delay:Math.random()*300}); fall.onfinish = ()=> p.remove(); } }
-
-function finalFlourish(){ // subtle camera shake on steps finish and shine flash
-  const steps = document.querySelectorAll('.step'); steps.forEach((s,i)=> s.animate([{transform:'translateY(-12px)'},{transform:'translateY(-6px)'},{transform:'translateY(-12px)'}],{duration:800,delay:i*80})); document.body.animate([{filter:'brightness(1)'},{filter:'brightness(1.06)'},{filter:'brightness(1)'}],{duration:800}); }
-
-// demo/help
-document.getElementById('demoBtn').addEventListener('click', ()=>{ document.getElementById('claimCode').value='GOLD-7F4A'; document.getElementById('verifyBtn').click(); setTimeout(()=>{ document.getElementById('channelName').value='ABHINAV'; document.getElementById('submitClaim').click(); },900); });
-
-document.getElementById('helpBtn').addEventListener('click', ()=> alert('Use codes like GOLD-7F4A, SILV-AB12, DIAM-0001. This demo simulates an official award claim flow with premium animations.'));
-
-// close on ESC
-window.addEventListener('keydown', e=>{ if(e.key==='Escape'){ youtubePop.style.display='none'; congratsBanner.classList.remove('show'); } });
-
-// parallax pointer movement for showcase
-const scene = document.querySelector('.parallax-scene'); if(scene){ scene.addEventListener('pointermove', (e)=>{ const rect = scene.getBoundingClientRect(); const x = (e.clientX - rect.left) / rect.width - 0.5; const y = (e.clientY - rect.top) / rect.height - 0.5; document.querySelectorAll('.card-play').forEach((el,i)=>{ const depth = (i%3 + 1) * 6; el.style.transform = `translateZ(${depth}px) translateY(${ -y*8 }px) translateX(${ x*8 }px)`; }); }); scene.addEventListener('pointerleave', ()=>{ document.querySelectorAll('.card-play').forEach((el)=> el.style.transform=''); }); }
+  function submitForm(e){
+    e.preventDefault();
+    popup.style.display = 'block';
+    setTimeout(()=> popup.style.display='none', 4000);
+    options.style.display='none';
+    formBox.style.display='none';
+    return false;
+  }
 </script>
+
 </body>
 </html>
